@@ -1,0 +1,532 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C1666FE841158C02AAC07 /* InfoPlist.strings */; };
+		8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		C966100F0EDFB4CC009DCD97 /* BBDefaultResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = C966100D0EDFB4CC009DCD97 /* BBDefaultResponder.h */; };
+		C96610100EDFB4CC009DCD97 /* BBDefaultResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = C966100E0EDFB4CC009DCD97 /* BBDefaultResponder.m */; };
+		C96610140EDFB4E7009DCD97 /* BBResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = C96610130EDFB4E7009DCD97 /* BBResponder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C966101A0EDFB6C7009DCD97 /* BBRequest.h in Headers */ = {isa = PBXBuildFile; fileRef = C96610180EDFB6C7009DCD97 /* BBRequest.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C966101B0EDFB6C7009DCD97 /* BBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C96610190EDFB6C7009DCD97 /* BBRequest.m */; };
+		C96E95F90F5886E20053C2AF /* AsyncSocket.h in Headers */ = {isa = PBXBuildFile; fileRef = C96E95F70F5886E20053C2AF /* AsyncSocket.h */; };
+		C96E95FA0F5886E20053C2AF /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C96E95F80F5886E20053C2AF /* AsyncSocket.m */; };
+		C9AC12050EED7E1D000A8510 /* SampleResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AC12040EED7E1D000A8510 /* SampleResponder.m */; };
+		C9AC12410EED8157000A8510 /* BBDirectoryResponder.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AC123F0EED8157000A8510 /* BBDirectoryResponder.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9AC12420EED8157000A8510 /* BBDirectoryResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = C9AC12400EED8157000A8510 /* BBDirectoryResponder.m */; };
+		C9B9ECCD0F5A4F100099AAD8 /* MPTidbits.h in Headers */ = {isa = PBXBuildFile; fileRef = C9B9ECC80F5A4F100099AAD8 /* MPTidbits.h */; };
+		C9B9ECCE0F5A4F100099AAD8 /* NSCollections+MPTidbits.h in Headers */ = {isa = PBXBuildFile; fileRef = C9B9ECC90F5A4F100099AAD8 /* NSCollections+MPTidbits.h */; };
+		C9B9ECCF0F5A4F100099AAD8 /* NSCollections+MPTidbits.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B9ECCA0F5A4F100099AAD8 /* NSCollections+MPTidbits.m */; };
+		C9B9ECD00F5A4F100099AAD8 /* NSString+MPTidbits.h in Headers */ = {isa = PBXBuildFile; fileRef = C9B9ECCB0F5A4F100099AAD8 /* NSString+MPTidbits.h */; };
+		C9B9ECD10F5A4F100099AAD8 /* NSString+MPTidbits.m in Sources */ = {isa = PBXBuildFile; fileRef = C9B9ECCC0F5A4F100099AAD8 /* NSString+MPTidbits.m */; };
+		C9C5708E0EDDBDD100DDA335 /* Blackbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Blackbox.framework */; };
+		C9C5709A0EDDBDFD00DDA335 /* Blackbox.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8DC2EF5B0486A6940098B216 /* Blackbox.framework */; };
+		C9C5709B0EDDBE0B00DDA335 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */; };
+		C9C570A20EDDBE2900DDA335 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C570A10EDDBE2900DDA335 /* AppController.m */; };
+		C9C570AB0EDDBE4400DDA335 /* BBServer.h in Headers */ = {isa = PBXBuildFile; fileRef = C9C570A60EDDBE3900DDA335 /* BBServer.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9C570AC0EDDBE4400DDA335 /* BBServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C570A70EDDBE3900DDA335 /* BBServer.m */; };
+		C9C570B10EDDBE8400DDA335 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = C9C570B00EDDBE8400DDA335 /* MainMenu.xib */; };
+		C9C570F00EDDC02200DDA335 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C570EF0EDDC02200DDA335 /* main.m */; };
+		C9C570F60EDDC08100DDA335 /* Blackbox.h in Headers */ = {isa = PBXBuildFile; fileRef = C9C570F50EDDC08100DDA335 /* Blackbox.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C9C571310EDDC53F00DDA335 /* BBConnection.h in Headers */ = {isa = PBXBuildFile; fileRef = C9C5712F0EDDC53F00DDA335 /* BBConnection.h */; };
+		C9C571320EDDC53F00DDA335 /* BBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C9C571300EDDC53F00DDA335 /* BBConnection.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C9C570820EDDBD9700DDA335 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0867D690FE84028FC02AAC07 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8DC2EF4F0486A6940098B216;
+			remoteInfo = Blackbox;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C9C570A30EDDBE2900DDA335 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				C9C5709A0EDDBDFD00DDA335 /* Blackbox.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		0867D69BFE84028FC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		0867D6A5FE840307C02AAC07 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
+		089C1667FE841158C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
+		32DBCF5E0370ADEE00C91783 /* Blackbox_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blackbox_Prefix.pch; sourceTree = "<group>"; };
+		8DC2EF5A0486A6940098B216 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8DC2EF5B0486A6940098B216 /* Blackbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Blackbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C966100D0EDFB4CC009DCD97 /* BBDefaultResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDefaultResponder.h; sourceTree = "<group>"; };
+		C966100E0EDFB4CC009DCD97 /* BBDefaultResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDefaultResponder.m; sourceTree = "<group>"; };
+		C96610130EDFB4E7009DCD97 /* BBResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBResponder.h; sourceTree = "<group>"; };
+		C96610180EDFB6C7009DCD97 /* BBRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBRequest.h; sourceTree = "<group>"; };
+		C96610190EDFB6C7009DCD97 /* BBRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBRequest.m; sourceTree = "<group>"; };
+		C96E95F70F5886E20053C2AF /* AsyncSocket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AsyncSocket.h; sourceTree = "<group>"; };
+		C96E95F80F5886E20053C2AF /* AsyncSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AsyncSocket.m; sourceTree = "<group>"; };
+		C9AC12030EED7E1D000A8510 /* SampleResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SampleResponder.h; sourceTree = "<group>"; };
+		C9AC12040EED7E1D000A8510 /* SampleResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SampleResponder.m; sourceTree = "<group>"; };
+		C9AC123F0EED8157000A8510 /* BBDirectoryResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDirectoryResponder.h; sourceTree = "<group>"; };
+		C9AC12400EED8157000A8510 /* BBDirectoryResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDirectoryResponder.m; sourceTree = "<group>"; };
+		C9B9ECC80F5A4F100099AAD8 /* MPTidbits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MPTidbits.h; sourceTree = "<group>"; };
+		C9B9ECC90F5A4F100099AAD8 /* NSCollections+MPTidbits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSCollections+MPTidbits.h"; sourceTree = "<group>"; };
+		C9B9ECCA0F5A4F100099AAD8 /* NSCollections+MPTidbits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSCollections+MPTidbits.m"; sourceTree = "<group>"; };
+		C9B9ECCB0F5A4F100099AAD8 /* NSString+MPTidbits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+MPTidbits.h"; sourceTree = "<group>"; };
+		C9B9ECCC0F5A4F100099AAD8 /* NSString+MPTidbits.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+MPTidbits.m"; sourceTree = "<group>"; };
+		C9C570790EDDBD4F00DDA335 /* Blackbox Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blackbox Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C9C5707B0EDDBD4F00DDA335 /* Blackbox Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Blackbox Demo-Info.plist"; sourceTree = "<group>"; };
+		C9C570A00EDDBE2900DDA335 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
+		C9C570A10EDDBE2900DDA335 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
+		C9C570A60EDDBE3900DDA335 /* BBServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBServer.h; sourceTree = "<group>"; };
+		C9C570A70EDDBE3900DDA335 /* BBServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBServer.m; sourceTree = "<group>"; };
+		C9C570B00EDDBE8400DDA335 /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		C9C570EF0EDDC02200DDA335 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C9C570F50EDDC08100DDA335 /* Blackbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Blackbox.h; sourceTree = "<group>"; };
+		C9C5712F0EDDC53F00DDA335 /* BBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBConnection.h; sourceTree = "<group>"; };
+		C9C571300EDDC53F00DDA335 /* BBConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBConnection.m; sourceTree = "<group>"; };
+		D2F7E79907B2D74100F64583 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DC2EF560486A6940098B216 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF570486A6940098B216 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9C570770EDDBD4F00DDA335 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9C5709B0EDDBE0B00DDA335 /* Cocoa.framework in Frameworks */,
+				C9C5708E0EDDBDD100DDA335 /* Blackbox.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		034768DFFF38A50411DB9C8B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5B0486A6940098B216 /* Blackbox.framework */,
+				C9C570790EDDBD4F00DDA335 /* Blackbox Demo.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0867D691FE84028FC02AAC07 /* Blackbox */ = {
+			isa = PBXGroup;
+			children = (
+				C9534CAD0F6BB43B0031A085 /* Classes (Test App) */,
+				08FB77AEFE84172EC02AAC07 /* Classes (Framework) */,
+				32C88DFF0371C24200C91783 /* Other Sources */,
+				089C1665FE841158C02AAC07 /* Resources */,
+				0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */,
+				034768DFFF38A50411DB9C8B /* Products */,
+				C9C5707B0EDDBD4F00DDA335 /* Blackbox Demo-Info.plist */,
+			);
+			name = Blackbox;
+			sourceTree = "<group>";
+		};
+		0867D69AFE84028FC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */,
+				1058C7B2FEA5585E11CA2CBB /* Other Frameworks */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		089C1665FE841158C02AAC07 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DC2EF5A0486A6940098B216 /* Info.plist */,
+				089C1666FE841158C02AAC07 /* InfoPlist.strings */,
+				C9C570B00EDDBE8400DDA335 /* MainMenu.xib */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		08FB77AEFE84172EC02AAC07 /* Classes (Framework) */ = {
+			isa = PBXGroup;
+			children = (
+				C9C570A60EDDBE3900DDA335 /* BBServer.h */,
+				C9C570A70EDDBE3900DDA335 /* BBServer.m */,
+				C9C5712F0EDDC53F00DDA335 /* BBConnection.h */,
+				C9C571300EDDC53F00DDA335 /* BBConnection.m */,
+				C966100D0EDFB4CC009DCD97 /* BBDefaultResponder.h */,
+				C966100E0EDFB4CC009DCD97 /* BBDefaultResponder.m */,
+				C9AC123F0EED8157000A8510 /* BBDirectoryResponder.h */,
+				C9AC12400EED8157000A8510 /* BBDirectoryResponder.m */,
+				C96610130EDFB4E7009DCD97 /* BBResponder.h */,
+				C96610180EDFB6C7009DCD97 /* BBRequest.h */,
+				C96610190EDFB6C7009DCD97 /* BBRequest.m */,
+			);
+			name = "Classes (Framework)";
+			sourceTree = "<group>";
+		};
+		1058C7B0FEA5585E11CA2CBB /* Linked Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1058C7B1FEA5585E11CA2CBB /* Cocoa.framework */,
+			);
+			name = "Linked Frameworks";
+			sourceTree = "<group>";
+		};
+		1058C7B2FEA5585E11CA2CBB /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0867D6A5FE840307C02AAC07 /* AppKit.framework */,
+				D2F7E79907B2D74100F64583 /* CoreData.framework */,
+				0867D69BFE84028FC02AAC07 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		32C88DFF0371C24200C91783 /* Other Sources */ = {
+			isa = PBXGroup;
+			children = (
+				C9B9ECC80F5A4F100099AAD8 /* MPTidbits.h */,
+				C9B9ECC90F5A4F100099AAD8 /* NSCollections+MPTidbits.h */,
+				C9B9ECCA0F5A4F100099AAD8 /* NSCollections+MPTidbits.m */,
+				C9B9ECCB0F5A4F100099AAD8 /* NSString+MPTidbits.h */,
+				C9B9ECCC0F5A4F100099AAD8 /* NSString+MPTidbits.m */,
+				C96E95F70F5886E20053C2AF /* AsyncSocket.h */,
+				C96E95F80F5886E20053C2AF /* AsyncSocket.m */,
+				C9C570EF0EDDC02200DDA335 /* main.m */,
+				32DBCF5E0370ADEE00C91783 /* Blackbox_Prefix.pch */,
+				C9C570F50EDDC08100DDA335 /* Blackbox.h */,
+			);
+			name = "Other Sources";
+			sourceTree = "<group>";
+		};
+		C9534CAD0F6BB43B0031A085 /* Classes (Test App) */ = {
+			isa = PBXGroup;
+			children = (
+				C9C570A00EDDBE2900DDA335 /* AppController.h */,
+				C9C570A10EDDBE2900DDA335 /* AppController.m */,
+				C9AC12030EED7E1D000A8510 /* SampleResponder.h */,
+				C9AC12040EED7E1D000A8510 /* SampleResponder.m */,
+			);
+			name = "Classes (Test App)";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		8DC2EF500486A6940098B216 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9C570AB0EDDBE4400DDA335 /* BBServer.h in Headers */,
+				C9C570F60EDDC08100DDA335 /* Blackbox.h in Headers */,
+				C9C571310EDDC53F00DDA335 /* BBConnection.h in Headers */,
+				C966100F0EDFB4CC009DCD97 /* BBDefaultResponder.h in Headers */,
+				C96610140EDFB4E7009DCD97 /* BBResponder.h in Headers */,
+				C966101A0EDFB6C7009DCD97 /* BBRequest.h in Headers */,
+				C9AC12410EED8157000A8510 /* BBDirectoryResponder.h in Headers */,
+				C96E95F90F5886E20053C2AF /* AsyncSocket.h in Headers */,
+				C9B9ECCD0F5A4F100099AAD8 /* MPTidbits.h in Headers */,
+				C9B9ECCE0F5A4F100099AAD8 /* NSCollections+MPTidbits.h in Headers */,
+				C9B9ECD00F5A4F100099AAD8 /* NSString+MPTidbits.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		8DC2EF4F0486A6940098B216 /* Blackbox */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "Blackbox" */;
+			buildPhases = (
+				8DC2EF500486A6940098B216 /* Headers */,
+				8DC2EF520486A6940098B216 /* Resources */,
+				8DC2EF540486A6940098B216 /* Sources */,
+				8DC2EF560486A6940098B216 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Blackbox;
+			productInstallPath = "$(HOME)/Library/Frameworks";
+			productName = Blackbox;
+			productReference = 8DC2EF5B0486A6940098B216 /* Blackbox.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C9C570780EDDBD4F00DDA335 /* Blackbox Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9C5707E0EDDBD5100DDA335 /* Build configuration list for PBXNativeTarget "Blackbox Demo" */;
+			buildPhases = (
+				C9C570750EDDBD4F00DDA335 /* Resources */,
+				C9C570760EDDBD4F00DDA335 /* Sources */,
+				C9C570770EDDBD4F00DDA335 /* Frameworks */,
+				C9C570A30EDDBE2900DDA335 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C9C570830EDDBD9700DDA335 /* PBXTargetDependency */,
+			);
+			name = "Blackbox Demo";
+			productName = "Blackbox Demo";
+			productReference = C9C570790EDDBD4F00DDA335 /* Blackbox Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0867D690FE84028FC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "Blackbox" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 0867D691FE84028FC02AAC07 /* Blackbox */;
+			productRefGroup = 034768DFFF38A50411DB9C8B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DC2EF4F0486A6940098B216 /* Blackbox */,
+				C9C570780EDDBD4F00DDA335 /* Blackbox Demo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8DC2EF520486A6940098B216 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DC2EF530486A6940098B216 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9C570750EDDBD4F00DDA335 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9C570B10EDDBE8400DDA335 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DC2EF540486A6940098B216 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9C570AC0EDDBE4400DDA335 /* BBServer.m in Sources */,
+				C9C571320EDDC53F00DDA335 /* BBConnection.m in Sources */,
+				C96610100EDFB4CC009DCD97 /* BBDefaultResponder.m in Sources */,
+				C966101B0EDFB6C7009DCD97 /* BBRequest.m in Sources */,
+				C9AC12420EED8157000A8510 /* BBDirectoryResponder.m in Sources */,
+				C96E95FA0F5886E20053C2AF /* AsyncSocket.m in Sources */,
+				C9B9ECCF0F5A4F100099AAD8 /* NSCollections+MPTidbits.m in Sources */,
+				C9B9ECD10F5A4F100099AAD8 /* NSString+MPTidbits.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C9C570760EDDBD4F00DDA335 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C9C570A20EDDBE2900DDA335 /* AppController.m in Sources */,
+				C9C570F00EDDC02200DDA335 /* main.m in Sources */,
+				C9AC12050EED7E1D000A8510 /* SampleResponder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C9C570830EDDBD9700DDA335 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8DC2EF4F0486A6940098B216 /* Blackbox */;
+			targetProxy = C9C570820EDDBD9700DDA335 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		089C1666FE841158C02AAC07 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				089C1667FE841158C02AAC07 /* English */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB91AE08733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Blackbox_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@loader_path/../Frameworks";
+				PRODUCT_NAME = Blackbox;
+				SDKROOT = macosx10.4;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Debug;
+		};
+		1DEB91AF08733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_VERSION = A;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Blackbox_Prefix.pch;
+				INFOPLIST_FILE = Info.plist;
+				INSTALL_PATH = "@loader_path/../Frameworks";
+				PRODUCT_NAME = Blackbox;
+				SDKROOT = macosx10.4;
+				WRAPPER_EXTENSION = framework;
+			};
+			name = Release;
+		};
+		1DEB91B208733DA50010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		1DEB91B308733DA50010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+		C9C5707C0EDDBD5000DDA335 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/build/Debug\"",
+				);
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Blackbox Demo-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Blackbox Demo";
+			};
+			name = Debug;
+		};
+		C9C5707D0EDDBD5000DDA335 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)/build/Debug\"",
+				);
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "Blackbox Demo-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "Blackbox Demo";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB91AD08733DA50010E9CD /* Build configuration list for PBXNativeTarget "Blackbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91AE08733DA50010E9CD /* Debug */,
+				1DEB91AF08733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB91B108733DA50010E9CD /* Build configuration list for PBXProject "Blackbox" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB91B208733DA50010E9CD /* Debug */,
+				1DEB91B308733DA50010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C9C5707E0EDDBD5100DDA335 /* Build configuration list for PBXNativeTarget "Blackbox Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C9C5707C0EDDBD5000DDA335 /* Debug */,
+				C9C5707D0EDDBD5000DDA335 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0867D690FE84028FC02AAC07 /* Project object */;
+}
