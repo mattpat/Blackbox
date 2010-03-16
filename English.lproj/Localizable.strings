@@ -1,0 +1,11 @@
+/* 
+   Localizable.strings
+   Blackbox
+
+   Created by Matt Patenaude on 3/16/10.
+   Copyright 2010 Matt Patenaude. All rights reserved.
+ */
+
+"Not Running" = "Not Running";
+"Running On Port %u…" = "Running On Port %u…";
+"Could Not Start Server" = "Could Not Start Server";
