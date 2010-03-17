@@ -8,6 +8,8 @@
 
 #import "BBDemoController.h"
 #import "BBRequest.h"
+#import "BBDemoLiveResponder.h"
+#import <SystemConfiguration/SystemConfiguration.h>
 
 
 @implementation BBDemoController
@@ -34,6 +36,20 @@
 	}
 	return self;
 }
+- (void)awakeFromNib
+{
+	// get computer name
+	NSString *computerName = (NSString *)SCDynamicStoreCopyComputerName(NULL, NULL);
+	
+	// setup our default (placeholder) values in the UI
+	[[serverPortField cell] setPlaceholderString:[NSString stringWithFormat:@"%u", BBDemoServerDefaultPort]];
+	[[bonjourNameField cell] setPlaceholderString:computerName];
+	CFRelease((CFStringRef)computerName);
+	
+	// finally, we set our "live responder" to respond to
+	// the path "/textbox"
+	[server setResponder:textBoxResponder forPath:@"/textbox"];
+}
 
 #pragma mark Deallocator
 - (void)dealloc
@@ -53,6 +69,31 @@
 {
 	if (!serverIsRunning)
 	{
+		// let's configure the server first
+		// first, the port
+		[server setPort:BBDemoServerDefaultPort];
+		NSString *portString = [serverPortField stringValue];
+		if (![portString isEqualToString:@""])
+			[server setPort:[portString integerValue]];
+		
+		// next, the Bonjour service
+		[server setName:@""];
+		[server setType:nil];
+		
+		if ([publishBonjourService state] == NSOnState)
+		{
+			NSString *bonjourName = [bonjourNameField stringValue];
+			NSString *serviceType = [bonjourTypeField stringValue];
+			if (![bonjourName isEqualToString:@""])
+				[server setName:bonjourName];
+			
+			if (![serviceType isEqualToString:@""])
+				[server setType:serviceType];
+			else
+				[server setType:@"_http._tcp."];
+		}
+		
+		// now, we start the server
 		NSError *err;
 		if ([server start:&err])
 		{
@@ -88,7 +129,7 @@
 	// print out the URL the user tried to access to the Console
 	[theRequest setResponseStatusCode:404];
 	[theRequest setResponseContentType:@"text/html"];
-	[theRequest setResponseString:@"<h1>404 File Not Found</h1>"];
+	[theRequest setResponseString:@"<h1>404 File Not Found</h1><p>Perhaps you were looking for <a href=\"/textbox\">the live textbox demo</a>?</p>"];
 	
 	NSLog(@"Request: someone tried to access %@", [theRequest fullPath]);
 }

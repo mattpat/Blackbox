@@ -11,6 +11,8 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C92AE05D11505DA20049F7F2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92AE05C11505DA20049F7F2 /* SystemConfiguration.framework */; };
+		C92AE0C4115060EB0049F7F2 /* BBDemoLiveResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = C92AE0C3115060EB0049F7F2 /* BBDemoLiveResponder.m */; };
 		C952E495114F286700FB1C20 /* BBServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E478114F286700FB1C20 /* BBServer.m */; };
 		C952E496114F286700FB1C20 /* BBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E47A114F286700FB1C20 /* BBConnection.m */; };
 		C952E497114F286700FB1C20 /* BBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E47C114F286700FB1C20 /* BBRequest.m */; };
@@ -41,6 +43,9 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Blackbox-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Blackbox-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Blackbox Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blackbox Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C92AE05C11505DA20049F7F2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
+		C92AE0C2115060EB0049F7F2 /* BBDemoLiveResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoLiveResponder.h; sourceTree = "<group>"; };
+		C92AE0C3115060EB0049F7F2 /* BBDemoLiveResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDemoLiveResponder.m; sourceTree = "<group>"; };
 		C952E477114F286700FB1C20 /* BBServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBServer.h; sourceTree = "<group>"; };
 		C952E478114F286700FB1C20 /* BBServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBServer.m; sourceTree = "<group>"; };
 		C952E479114F286700FB1C20 /* BBConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBConnection.h; sourceTree = "<group>"; };
@@ -81,6 +86,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				C92AE05D11505DA20049F7F2 /* SystemConfiguration.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +98,8 @@
 			children = (
 				C952E4D6114F32A400FB1C20 /* BBDemoController.h */,
 				C952E4D7114F32A400FB1C20 /* BBDemoController.m */,
+				C92AE0C2115060EB0049F7F2 /* BBDemoLiveResponder.h */,
+				C92AE0C3115060EB0049F7F2 /* BBDemoLiveResponder.m */,
 			);
 			name = "Classes (Demo App)";
 			sourceTree = "<group>";
@@ -99,6 +107,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C92AE05C11505DA20049F7F2 /* SystemConfiguration.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
 			name = "Linked Frameworks";
@@ -300,6 +309,7 @@
 				C952E4A0114F286700FB1C20 /* DDRange.m in Sources */,
 				C952E4A1114F286700FB1C20 /* DDData.m in Sources */,
 				C952E4D8114F32A400FB1C20 /* BBDemoController.m in Sources */,
+				C92AE0C4115060EB0049F7F2 /* BBDemoLiveResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

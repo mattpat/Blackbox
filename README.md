@@ -8,7 +8,7 @@ Want a demo? Check out [this (old) video](http://vimeo.com/3416746), which shows
 
 Documentation
 -------------
-Documentation is forthcoming, but not yet available. :) If you want to play around with it, start with the Blackbox Demo app, included in the project.
+Documentation is forthcoming, but not yet available. :) If you want to play around with it, start with the Blackbox Demo app, included in the project. **Please note** that the demo application links against the `SystemConfiguration` framework; this is *not necessary* to use Blackbox, the framework is only used to get the computer name to display as the placeholder text for "Bonjour Name." This value is obtained automatically if you set the Bonjour name to `nil`.
 
 Projects That Use Blackbox
 --------------------------

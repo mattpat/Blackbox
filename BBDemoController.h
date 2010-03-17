@@ -14,12 +14,23 @@
 // Constants
 #define BBDemoServerDefaultPort 8080
 
+// Forward declarations
+@class BBDemoLiveResponder;
+
 @interface BBDemoController : NSObject<BBResponder> {
 	BBServer *server;
 	BOOL serverIsRunning;
 	
 	IBOutlet NSImageView *statusImageView;
 	IBOutlet NSTextField *statusField;
+	
+	IBOutlet NSTextField *serverPortField;
+	IBOutlet NSButton *publishBonjourService;
+	IBOutlet NSTextField *bonjourNameField;
+	IBOutlet NSTextField *bonjourTypeField;
+	
+	// Our other responder
+	IBOutlet BBDemoLiveResponder *textBoxResponder;
 }
 
 // Application delegate methods
