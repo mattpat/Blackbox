@@ -8,7 +8,21 @@ Want a demo? Check out [this (old) video](http://vimeo.com/3416746), which shows
 
 Documentation
 -------------
-Documentation is forthcoming, but not yet available. :) If you want to play around with it, start with the Blackbox Demo app, included in the project. **Please note** that the demo application links against the `SystemConfiguration` framework; this is *not necessary* to use Blackbox, the framework is only used to get the computer name to display as the placeholder text for "Bonjour Name." This value is obtained automatically if you set the Bonjour name to an empty string (`@""`).
+Documentation is forthcoming, but not yet available. :) Here are the basics though:
+
+You create your server by `alloc`/`init`'ing a `BBServer` object, which inherits most of its functionality from the `HTTPServer` class (part of CocoaHTTPServer). See `HTTPServer.h` for configuration options (ie, server port, Bonjour service name/type, etc.). Once your server is configured to your liking, set it into motion with the `start:` method.
+
+When a request comes in, Blackbox looks for the appropriate "responder" object to handle the request. A responder (in this context) is any Objective-C object that conforms to the `BBResponder` protocol (in `BBResponder.h`) -- currently, this is only the `handleRequest:` method. You associate responders with URL paths using `BBServer`'s `setResponder:forPath:` method.
+
+For example, if I wanted the object `myObject` to handle any calls below `/coolbeans`, I would do this:
+
+	[myServer setResponder:myObject forPath:@"/coolbeans"];
+
+Now, requests to `/coolbeans`, `/coolbeans/yummy`, and `/coolbeans/photos/garbanzo.jpg` would all be directed to `myObject`'s `handleRequest:` method. You respond to a request using either the `setResponseBody:` or `setResponseString:` method of the provided `BBRequest` object. You use the `BBRequest` object to get information (ie, POST params) out of the request, and to change other properties of the response, including content type and HTTP status code -- see `BBRequest.h` for more details. The response is sent when your responder's `handleRequest:` method returns.
+
+Requests to paths without an associated responder object are tacitly ignored by default, and given a response of "200 OK." If you'd like, you can set a "catch-all" responder using the `setDefaultResponder:` method.
+
+If you want to play around with it, start with the Blackbox Demo app, included in the project. **Please note** that the demo application links against the `SystemConfiguration` framework; this is *not necessary* to use Blackbox, the framework is only used to get the computer name to display as the placeholder text for "Bonjour Name." This value is obtained automatically if you set the Bonjour name to an empty string (`@""`).
 
 Projects That Use Blackbox
 --------------------------
