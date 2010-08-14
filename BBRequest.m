@@ -60,6 +60,17 @@ void BBParseQueryIntoDictionary(NSString *queryString, NSMutableDictionary *dict
 			[dict setObject:[NSNull null] forKey:[keyValPrel objectAtIndex:0]];
 	}
 }
+void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *dict)
+{
+	NSString *err = nil;
+	NSDictionary *plist = [NSPropertyListSerialization propertyListFromData:postData mutabilityOption:NSPropertyListImmutable format:NULL errorDescription:&err];
+	
+	if (plist)
+		[dict setDictionary:plist];
+	
+	if (err)
+		[err release];
+}
 
 @implementation BBRequest
 
@@ -86,8 +97,14 @@ void BBParseQueryIntoDictionary(NSString *queryString, NSMutableDictionary *dict
 		[requestURL release];
 		
 		postParams = [[NSMutableDictionary alloc] init];
-		if (![[self postString] isEqualToString:@""])
-			BBParseQueryIntoDictionary([self postString], postParams);
+		NSData *postData = [self rawPostData];
+		if ([postData length] > 0)
+		{
+			if ([[[[self headers] objectForKey:@"X-Propertylist"] lowercaseString] isEqualToString:@"true"])
+				BBParsePropertyListIntoDictionary([self rawPostData], postParams);
+			else
+				BBParseQueryIntoDictionary([self postString], postParams);
+		}
 	}
 	return self;
 }

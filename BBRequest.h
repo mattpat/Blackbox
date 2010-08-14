@@ -30,6 +30,7 @@
 // Functions
 NSString *BBNormalizeHeaderName(NSString *headerName);
 void BBParseQueryIntoDictionary(NSString *queryString, NSMutableDictionary *dict);
+void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *dict);
 
 // Forward declarations
 @class BBServer;
