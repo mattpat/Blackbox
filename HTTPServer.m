@@ -213,7 +213,11 @@
 
 - (BOOL)start:(NSError **)errPtr
 {
-	BOOL success = [asyncSocket acceptOnPort:port error:errPtr];
+	return [self start:errPtr localhostOnly:NO];
+}
+- (BOOL)start:(NSError **)errPtr localhostOnly:(BOOL)local
+{
+	BOOL success = [asyncSocket acceptOnInterface:((local) ? @"localhost" : nil) port:port error:errPtr];
 	
 	if(success)
 	{

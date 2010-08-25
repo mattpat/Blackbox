@@ -60,6 +60,7 @@
 - (void)setTXTRecordDictionary:(NSDictionary *)dict;
 
 - (BOOL)start:(NSError **)errPtr;
+- (BOOL)start:(NSError **)errPtr localhostOnly:(BOOL)local;
 - (BOOL)stop;
 
 - (NSUInteger)numberOfHTTPConnections;
