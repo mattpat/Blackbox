@@ -16,7 +16,7 @@
 			return nil;
 		}
 		
-		NSDictionary *fileAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:filePath traverseLink:NO];
+		NSDictionary *fileAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:filePath error:nil];
 		NSNumber *fileSize = [fileAttributes objectForKey:NSFileSize];
 		fileLength = (UInt64)[fileSize unsignedLongLongValue];
 	}
@@ -46,7 +46,7 @@
 	[fileHandle seekToFileOffset:offset];
 }
 
-- (NSData *)readDataOfLength:(unsigned int)length
+- (NSData *)readDataOfLength:(NSUInteger)length
 {
 	return [fileHandle readDataOfLength:length];
 }
@@ -97,13 +97,13 @@
 
 - (void)setOffset:(UInt64)offsetParam
 {
-	offset = offsetParam;
+	offset = (unsigned)offsetParam;
 }
 
-- (NSData *)readDataOfLength:(unsigned int)lengthParameter
+- (NSData *)readDataOfLength:(NSUInteger)lengthParameter
 {
-	unsigned int remaining = [data length] - offset;
-	unsigned int length = lengthParameter < remaining ? lengthParameter : remaining;
+	NSUInteger remaining = [data length] - offset;
+	NSUInteger length = lengthParameter < remaining ? lengthParameter : remaining;
 	
 	void *bytes = (void *)([data bytes] + offset);
 	
@@ -115,6 +115,64 @@
 - (BOOL)isDone
 {
 	return (offset == [data length]);
+}
+
+@end
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#pragma mark -
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+@implementation HTTPRedirectResponse
+
+- (id)initWithPath:(NSString *)path
+{
+	if ((self = [super init]))
+	{
+		redirectPath = [path copy];
+	}
+	return self;
+}
+
+- (UInt64)contentLength
+{
+	return 0;
+}
+
+- (UInt64)offset
+{
+	return 0;
+}
+
+- (void)setOffset:(UInt64)offset
+{
+	// Nothing to do
+}
+
+- (NSData *)readDataOfLength:(NSUInteger)length
+{
+	return nil;
+}
+
+- (BOOL)isDone
+{
+	return YES;
+}
+
+- (NSDictionary *)httpHeaders
+{
+	return [NSDictionary dictionaryWithObject:redirectPath forKey:@"Location"];
+}
+
+- (NSInteger)status
+{
+	return 302;
+}
+
+- (void)dealloc
+{
+	[redirectPath release];
+	[super dealloc];
 }
 
 @end

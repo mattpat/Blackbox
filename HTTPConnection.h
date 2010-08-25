@@ -39,7 +39,7 @@
 - (id)initWithAsyncSocket:(AsyncSocket *)newSocket forServer:(HTTPServer *)myServer;
 
 - (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)path;
-- (BOOL)expectsRequestBodyFromMethod:(NSString *)method atPath:(NSString *)relativePath;
+- (BOOL)expectsRequestBodyFromMethod:(NSString *)method atPath:(NSString *)path;
 
 - (BOOL)isSecureServer;
 - (NSArray *)sslIdentityAndCertificates;
@@ -49,8 +49,12 @@
 - (NSString *)realm;
 - (NSString *)passwordForUser:(NSString *)username;
 
-- (NSString *)filePathForURI:(NSString *)path;
+- (NSDictionary *)parseParams:(NSString *)query;
+- (NSDictionary *)parseGetParams;
 
+- (NSString *)requestURI;
+
+- (NSString *)filePathForURI:(NSString *)path;
 - (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path;
 
 - (void)prepareForBodyWithSize:(UInt64)contentLength;
@@ -65,6 +69,7 @@
 - (NSData *)preprocessResponse:(CFHTTPMessageRef)response;
 - (NSData *)preprocessErrorResponse:(CFHTTPMessageRef)response;
 
+- (BOOL)shouldDie;
 - (void)die;
 
 @end

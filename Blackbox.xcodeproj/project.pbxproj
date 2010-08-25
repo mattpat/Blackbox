@@ -30,6 +30,9 @@
 		C952E4F8114F362700FB1C20 /* off.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C952E4F6114F362700FB1C20 /* off.tiff */; };
 		C952E4F9114F362700FB1C20 /* on.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C952E4F7114F362700FB1C20 /* on.tiff */; };
 		C952E509114F3ABF00FB1C20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C952E508114F3ABF00FB1C20 /* Localizable.strings */; };
+		C96928E11224B89000CDC4FB /* HTTPDynamicFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C96928E01224B89000CDC4FB /* HTTPDynamicFileResponse.m */; };
+		C96929141224BB4A00CDC4FB /* SSCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C96929131224BB4A00CDC4FB /* SSCrypto.m */; };
+		C96929251224BB9300CDC4FB /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C96929241224BB9300CDC4FB /* libcrypto.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +81,11 @@
 		C952E4F6114F362700FB1C20 /* off.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = off.tiff; sourceTree = "<group>"; };
 		C952E4F7114F362700FB1C20 /* on.tiff */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = on.tiff; sourceTree = "<group>"; };
 		C952E505114F3AA100FB1C20 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C96928DF1224B89000CDC4FB /* HTTPDynamicFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDynamicFileResponse.h; sourceTree = "<group>"; };
+		C96928E01224B89000CDC4FB /* HTTPDynamicFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDynamicFileResponse.m; sourceTree = "<group>"; };
+		C96929121224BB4A00CDC4FB /* SSCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCrypto.h; sourceTree = "<group>"; };
+		C96929131224BB4A00CDC4FB /* SSCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCrypto.m; sourceTree = "<group>"; };
+		C96929241224BB9300CDC4FB /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +95,7 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				C92AE05D11505DA20049F7F2 /* SystemConfiguration.framework in Frameworks */,
+				C96929251224BB9300CDC4FB /* libcrypto.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +116,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C96929241224BB9300CDC4FB /* libcrypto.dylib */,
 				C92AE05C11505DA20049F7F2 /* SystemConfiguration.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -178,6 +188,7 @@
 		C952E476114F286700FB1C20 /* Blackbox */ = {
 			isa = PBXGroup;
 			children = (
+				C96929101224BB3E00CDC4FB /* SSCrypto */,
 				C952E48E114F286700FB1C20 /* Categories */,
 				C952E48B114F286700FB1C20 /* TCP */,
 				C952E480114F286700FB1C20 /* HTTP */,
@@ -199,6 +210,8 @@
 			children = (
 				C952E481114F286700FB1C20 /* HTTPAsyncFileResponse.h */,
 				C952E482114F286700FB1C20 /* HTTPAsyncFileResponse.m */,
+				C96928DF1224B89000CDC4FB /* HTTPDynamicFileResponse.h */,
+				C96928E01224B89000CDC4FB /* HTTPDynamicFileResponse.m */,
 				C952E483114F286700FB1C20 /* HTTPAuthenticationRequest.h */,
 				C952E484114F286700FB1C20 /* HTTPAuthenticationRequest.m */,
 				C952E485114F286700FB1C20 /* HTTPServer.h */,
@@ -231,6 +244,15 @@
 				C952E494114F286700FB1C20 /* DDData.m */,
 			);
 			name = Categories;
+			sourceTree = "<group>";
+		};
+		C96929101224BB3E00CDC4FB /* SSCrypto */ = {
+			isa = PBXGroup;
+			children = (
+				C96929121224BB4A00CDC4FB /* SSCrypto.h */,
+				C96929131224BB4A00CDC4FB /* SSCrypto.m */,
+			);
+			name = SSCrypto;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,6 +332,8 @@
 				C952E4A1114F286700FB1C20 /* DDData.m in Sources */,
 				C952E4D8114F32A400FB1C20 /* BBDemoController.m in Sources */,
 				C92AE0C4115060EB0049F7F2 /* BBDemoLiveResponder.m in Sources */,
+				C96928E11224B89000CDC4FB /* HTTPDynamicFileResponse.m in Sources */,
+				C96929141224BB4A00CDC4FB /* SSCrypto.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

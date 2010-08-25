@@ -39,7 +39,8 @@
 - (id)initWithRequest:(BBRequest *)aRequest;
 
 // Properties
-- (NSInteger)statusCode;
+- (NSInteger)statusCode;	// deprecated
+- (NSInteger)status;
 
 // Overridden methods
 - (NSDictionary *)httpHeaders;

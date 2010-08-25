@@ -2,8 +2,16 @@
 
 @class AsyncSocket;
 
+#if MAC_OS_X_VERSION_MIN_REQUIRED >= 1060 // Mac OS X 10.6
+  #define IMPLEMENTED_PROTOCOLS <NSNetServiceDelegate>
+#elif __IPHONE_OS_VERSION_MIN_REQUIRED >= 40000 // iPhone 4.0
+  #define IMPLEMENTED_PROTOCOLS <NSNetServiceDelegate>
+#else
+  #define IMPLEMENTED_PROTOCOLS 
+#endif
 
-@interface HTTPServer : NSObject
+
+@interface HTTPServer : NSObject IMPLEMENTED_PROTOCOLS
 {
 	// Underlying asynchronous TCP/IP socket
 	AsyncSocket *asyncSocket;
@@ -51,9 +59,9 @@
 - (NSDictionary *)TXTRecordDictionary;
 - (void)setTXTRecordDictionary:(NSDictionary *)dict;
 
-- (BOOL)start:(NSError **)error;
+- (BOOL)start:(NSError **)errPtr;
 - (BOOL)stop;
 
-- (uint)numberOfHTTPConnections;
+- (NSUInteger)numberOfHTTPConnections;
 
 @end

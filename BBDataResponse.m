@@ -48,7 +48,11 @@
 }
 
 #pragma mark Properties
-- (NSInteger)statusCode
+- (NSInteger)statusCode		// deprecated
+{
+	return [theRequest responseStatusCode];
+}
+- (NSInteger)status
 {
 	return [theRequest responseStatusCode];
 }
