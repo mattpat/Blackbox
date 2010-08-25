@@ -31,8 +31,6 @@
 		C952E4F9114F362700FB1C20 /* on.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C952E4F7114F362700FB1C20 /* on.tiff */; };
 		C952E509114F3ABF00FB1C20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C952E508114F3ABF00FB1C20 /* Localizable.strings */; };
 		C96928E11224B89000CDC4FB /* HTTPDynamicFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C96928E01224B89000CDC4FB /* HTTPDynamicFileResponse.m */; };
-		C96929141224BB4A00CDC4FB /* SSCrypto.m in Sources */ = {isa = PBXBuildFile; fileRef = C96929131224BB4A00CDC4FB /* SSCrypto.m */; };
-		C96929251224BB9300CDC4FB /* libcrypto.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C96929241224BB9300CDC4FB /* libcrypto.dylib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,9 +81,8 @@
 		C952E505114F3AA100FB1C20 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C96928DF1224B89000CDC4FB /* HTTPDynamicFileResponse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPDynamicFileResponse.h; sourceTree = "<group>"; };
 		C96928E01224B89000CDC4FB /* HTTPDynamicFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDynamicFileResponse.m; sourceTree = "<group>"; };
-		C96929121224BB4A00CDC4FB /* SSCrypto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SSCrypto.h; sourceTree = "<group>"; };
-		C96929131224BB4A00CDC4FB /* SSCrypto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SSCrypto.m; sourceTree = "<group>"; };
-		C96929241224BB9300CDC4FB /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = /usr/lib/libcrypto.dylib; sourceTree = "<absolute>"; };
+		C96929561224BE6700CDC4FB /* HaleBopp Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HaleBopp Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C96929581224BE6700CDC4FB /* HaleBopp Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HaleBopp Demo-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,7 +92,13 @@
 			files = (
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				C92AE05D11505DA20049F7F2 /* SystemConfiguration.framework in Frameworks */,
-				C96929251224BB9300CDC4FB /* libcrypto.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C96929541224BE6700CDC4FB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -116,7 +119,6 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				C96929241224BB9300CDC4FB /* libcrypto.dylib */,
 				C92AE05C11505DA20049F7F2 /* SystemConfiguration.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				8D1107320486CEB800E47090 /* Blackbox Demo.app */,
+				C96929561224BE6700CDC4FB /* HaleBopp Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +149,7 @@
 			children = (
 				C952E476114F286700FB1C20 /* Blackbox */,
 				080E96DDFE201D6D7F000001 /* Classes (Demo App) */,
+				C969294C1224BE2B00CDC4FB /* Classes (HaleBopp Demo App) */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -169,6 +173,7 @@
 				C952E4F6114F362700FB1C20 /* off.tiff */,
 				C952E4F7114F362700FB1C20 /* on.tiff */,
 				8D1107310486CEB800E47090 /* Blackbox-Info.plist */,
+				C96929581224BE6700CDC4FB /* HaleBopp Demo-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				C952E508114F3ABF00FB1C20 /* Localizable.strings */,
@@ -188,7 +193,6 @@
 		C952E476114F286700FB1C20 /* Blackbox */ = {
 			isa = PBXGroup;
 			children = (
-				C96929101224BB3E00CDC4FB /* SSCrypto */,
 				C952E48E114F286700FB1C20 /* Categories */,
 				C952E48B114F286700FB1C20 /* TCP */,
 				C952E480114F286700FB1C20 /* HTTP */,
@@ -246,13 +250,11 @@
 			name = Categories;
 			sourceTree = "<group>";
 		};
-		C96929101224BB3E00CDC4FB /* SSCrypto */ = {
+		C969294C1224BE2B00CDC4FB /* Classes (HaleBopp Demo App) */ = {
 			isa = PBXGroup;
 			children = (
-				C96929121224BB4A00CDC4FB /* SSCrypto.h */,
-				C96929131224BB4A00CDC4FB /* SSCrypto.m */,
 			);
-			name = SSCrypto;
+			name = "Classes (HaleBopp Demo App)";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +278,23 @@
 			productReference = 8D1107320486CEB800E47090 /* Blackbox Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C96929551224BE6700CDC4FB /* HaleBopp Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C969295B1224BE6700CDC4FB /* Build configuration list for PBXNativeTarget "HaleBopp Demo" */;
+			buildPhases = (
+				C96929521224BE6700CDC4FB /* Resources */,
+				C96929531224BE6700CDC4FB /* Sources */,
+				C96929541224BE6700CDC4FB /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HaleBopp Demo";
+			productName = "HaleBopp Demo";
+			productReference = C96929561224BE6700CDC4FB /* HaleBopp Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -292,6 +311,7 @@
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* Blackbox Demo */,
+				C96929551224BE6700CDC4FB /* HaleBopp Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -306,6 +326,13 @@
 				C952E4F8114F362700FB1C20 /* off.tiff in Resources */,
 				C952E4F9114F362700FB1C20 /* on.tiff in Resources */,
 				C952E509114F3ABF00FB1C20 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C96929521224BE6700CDC4FB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +360,13 @@
 				C952E4D8114F32A400FB1C20 /* BBDemoController.m in Sources */,
 				C92AE0C4115060EB0049F7F2 /* BBDemoLiveResponder.m in Sources */,
 				C96928E11224B89000CDC4FB /* HTTPDynamicFileResponse.m in Sources */,
-				C96929141224BB4A00CDC4FB /* SSCrypto.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C96929531224BE6700CDC4FB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -424,6 +457,54 @@
 			};
 			name = Release;
 		};
+		C96929591224BE6700CDC4FB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "HaleBopp Demo-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "HaleBopp Demo";
+			};
+			name = Debug;
+		};
+		C969295A1224BE6700CDC4FB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "HaleBopp Demo-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "HaleBopp Demo";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -441,6 +522,15 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C969295B1224BE6700CDC4FB /* Build configuration list for PBXNativeTarget "HaleBopp Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C96929591224BE6700CDC4FB /* Debug */,
+				C969295A1224BE6700CDC4FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
