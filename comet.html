@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Comet Demo</title>
+	<script type="text/javascript">
+	// This is a Comet demo using Blackbox + HaleBopp
+	// The client can be started after being given a name.
+	// It will then automatically reconnect each time a long
+	// poll completes in order to retrieve new pushes.
+	var clientName = 'My Client';
+	function $(el) { return document.getElementById(el); }
+	function startClient()
+	{
+		// first, get the client name
+		clientName = $('clientName').value;
+		
+		// next, disable restarting the client
+		$('serverInfo').innerText = 'Client started as "' + clientName + '."';
+		
+		// and finally, start the long poll
+		startLongPoll();
+	}
+	function startLongPoll()
+	{
+		var req = new XMLHttpRequest();
+		req.open('GET', '/poll' + ((clientName != null) ? '?name=' + encodeURIComponent(clientName) : ''), true);
+		req.addEventListener('readystatechange', pollStateChanged, false);
+		req.send(null);
+	}
+	function pollStateChanged(event)
+	{
+		var req = event.target;
+		if (req.readyState == 4 && req.status == 200)
+		{
+			// add the string to our list
+			var response = req.responseText;
+			var el = document.createElement('li');
+			el.innerText = response;
+			$('strings').appendChild(el);
+			
+			// start our next poll
+			startLongPoll();
+		}
+	}
+	</script>
+</head>
+<body>
+	<h1>Comet Demo</h1>
+	<p id="serverInfo"><label for="clientName">Client name:</label> <input id="clientName" type="text" value="My Client"> <button id="startButton" onclick="startClient();">Start Client</button></p>
+	<h2>Pushed Strings</h2>
+	<ul id="strings">
+	</ul>
+</body>
+</html>

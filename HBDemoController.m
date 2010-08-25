@@ -103,13 +103,20 @@
 	// don't have a responder setup for (because this object is
 	// set as the "default responder")
 	
-	// We'll return a 404, put up an error message, and
-	// print out the URL the user tried to access to the Console
-	[theRequest setResponseStatusCode:404];
-	[theRequest setResponseContentType:@"text/html"];
-	[theRequest setResponseString:@"<h1>404 File Not Found</h1><p>Perhaps you were looking for <a href=\"/textbox\">the live textbox demo</a>?</p>"];
-	
-	NSLog(@"Request: someone tried to access %@", [theRequest fullPath]);
+	// If they try to access "/comet", we'll put up our sample
+	// HTML file, which calls "/poll" to test the Comet server
+	if ([[theRequest fullPath] isEqualToString:@"/comet"])
+		[theRequest respondWithFile:[[NSBundle mainBundle] pathForResource:@"comet" ofType:@"html"]];
+	else
+	{
+		// We'll return a 404, put up an error message, and
+		// print out the URL the user tried to access to the Console
+		[theRequest setResponseStatusCode:404];
+		[theRequest setResponseContentType:@"text/html"];
+		[theRequest setResponseString:@"<h1>404 File Not Found</h1><p>Perhaps you were looking for <a href=\"/comet\">the Comet demo</a>?</p>"];
+		
+		NSLog(@"Request: someone tried to access %@", [theRequest fullPath]);
+	}
 }
 
 #pragma mark HaleBopp delegate methods (HBResponderDelegate)

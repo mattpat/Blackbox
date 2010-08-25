@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -267,29 +265,23 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>C952E476114F286700FB1C20</string>
-								<string>C952E480114F286700FB1C20</string>
 								<string>C9692A371224D5B400CDC4FB</string>
-								<string>080E96DDFE201D6D7F000001</string>
-								<string>C969294C1224BE2B00CDC4FB</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1058C7A0FEA54F0111CA2CBB</string>
 								<string>1C37FBAC04509CD000000102</string>
-								<string>C96929641224BF5300CDC4FB</string>
-								<string>C96929651224BF5300CDC4FB</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>17</integer>
 									<integer>14</integer>
-									<integer>4</integer>
-									<integer>1</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 39}, {186, 636}}</string>
+							<string>{{0, 0}, {186, 636}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -319,12 +311,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>BBConnection.m</string>
+								<string>HBResponderDelegate.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -332,11 +326,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>BBConnection.m</string>
+										<string>HBResponderDelegate.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C9692AF51224FA7000CDC4FB</string>
+										<string>C9692B3D12250B2000CDC4FB</string>
 										<key>history</key>
 										<array>
 											<string>C952E4A5114F28CB00FB1C20</string>
@@ -357,7 +351,6 @@
 											<string>C96929B21224C63500CDC4FB</string>
 											<string>C96929B41224C63500CDC4FB</string>
 											<string>C96929B51224C63500CDC4FB</string>
-											<string>C96929C91224C6D900CDC4FB</string>
 											<string>C96929DC1224C89800CDC4FB</string>
 											<string>C96929DE1224C89800CDC4FB</string>
 											<string>C96929DF1224C89800CDC4FB</string>
@@ -366,21 +359,23 @@
 											<string>C9692A081224D2BE00CDC4FB</string>
 											<string>C9692A0A1224D2BE00CDC4FB</string>
 											<string>C9692A0B1224D2BE00CDC4FB</string>
-											<string>C9692A0C1224D2BE00CDC4FB</string>
-											<string>C9692A0D1224D2BE00CDC4FB</string>
 											<string>C9692A6C1224E77100CDC4FB</string>
-											<string>C9692A6D1224E77100CDC4FB</string>
-											<string>C9692AA21224F22300CDC4FB</string>
-											<string>C9692ACB1224F75100CDC4FB</string>
-											<string>C9692ACC1224F75100CDC4FB</string>
-											<string>C9692ACD1224F75100CDC4FB</string>
 											<string>C9692AD81224F8E300CDC4FB</string>
 											<string>C9692ADA1224F8E300CDC4FB</string>
-											<string>C9692ADC1224F8E300CDC4FB</string>
-											<string>C9692AE41224F99200CDC4FB</string>
-											<string>C9692AE51224F99200CDC4FB</string>
-											<string>C9692AE61224F99200CDC4FB</string>
-											<string>C9692AD91224F8E300CDC4FB</string>
+											<string>C9692AFC1224FFDA00CDC4FB</string>
+											<string>C9692B131225011100CDC4FB</string>
+											<string>C9692B141225011100CDC4FB</string>
+											<string>C9692B151225011100CDC4FB</string>
+											<string>C9692B161225011100CDC4FB</string>
+											<string>C9692B181225011100CDC4FB</string>
+											<string>C9692B1A1225011100CDC4FB</string>
+											<string>C9692B211225025C00CDC4FB</string>
+											<string>C9692B221225025C00CDC4FB</string>
+											<string>C9692B231225025C00CDC4FB</string>
+											<string>C9692B3512250AE700CDC4FB</string>
+											<string>C9692B3612250AE700CDC4FB</string>
+											<string>C9692B3712250AE700CDC4FB</string>
+											<string>C9692AA21224F22300CDC4FB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -578,14 +573,12 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C9692AF61224FA7000CDC4FB</string>
-		<string>C9692AF71224FA7000CDC4FB</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>C969290D1224BB3400CDC4FB</string>
 		<string>C969290E1224BB3400CDC4FB</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>C9CBAEC4114F27FD0030D309</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/matt/Blackbox/Blackbox.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -823,6 +816,8 @@
 							<key>Dock</key>
 							<array>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
@@ -849,8 +844,6 @@
 							<string>212pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -962,7 +955,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
