@@ -92,6 +92,7 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 		responseData = [[NSData data] retain];
 		responseHeaders = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"text/plain", @"Content-Type", nil];
 		responseStatusCode = 200;
+		responseFilePath = nil;
 		
 		getParams = [[NSMutableDictionary alloc] init];
 		queryString = [[requestURL query] copy];
@@ -118,6 +119,7 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 	[connection release];
 	CFRelease(request);
 	[responseData release];
+	[responseFilePath release];
 	[relativePath release];
 	[fullPath release];
 	[responseHeaders release];
@@ -180,6 +182,10 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 {
 	return responseData;
 }
+- (NSString *)responseFilePath
+{
+	return responseFilePath;
+}
 - (BBConnection *)connection
 {
 	return connection;
@@ -210,6 +216,15 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 		responseData = nil;
 	}
 	responseData = [theData copy];
+}
+- (void)respondWithFile:(NSString *)path
+{
+	if (responseFilePath)
+	{
+		[responseFilePath release];
+		responseFilePath = nil;
+	}
+	responseFilePath = [path copy];
 }
 - (void)sendResponse
 {

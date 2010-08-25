@@ -50,6 +50,7 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 	NSData *responseData;
 	NSMutableDictionary *responseHeaders;
 	NSInteger responseStatusCode;
+	NSString *responseFilePath;
 	
 	BOOL useAsynchronousResponse;
 }
@@ -70,6 +71,7 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 - (NSInteger)responseStatusCode;
 - (NSDictionary *)responseHeaders;
 - (NSData *)responseData;
+- (NSString *)responseFilePath;
 - (BBConnection *)connection;
 
 // Methods
@@ -78,6 +80,7 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 - (void)setResponseHeaderValue:(NSString *)headerValue forHeader:(NSString *)headerName;
 - (void)setResponseString:(NSString *)theString;
 - (void)setResponseBody:(NSData *)theData;
+- (void)respondWithFile:(NSString *)path;
 - (void)sendResponse;	// asynchronous responses only!
 
 @end

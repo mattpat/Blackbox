@@ -29,6 +29,7 @@
 #import "BBResponder.h"
 #import "BBRequest.h"
 #import "BBDataResponse.h"
+#import "HTTPAsyncFileResponse.h"
 
 
 @implementation BBConnection
@@ -59,7 +60,13 @@
 #pragma mark Response methods
 - (NSObject<HTTPResponse> *)responseForRequest:(BBRequest *)theRequest
 {
-	return [[[BBDataResponse alloc] initWithRequest:theRequest] autorelease];
+	NSObject<HTTPResponse> *response = nil;
+	if ([theRequest responseFilePath] != nil)
+		response = [[HTTPAsyncFileResponse alloc] initWithFilePath:[theRequest responseFilePath] forConnection:self runLoopModes:[asyncSocket runLoopModes]];
+	else
+		response = [[BBDataResponse alloc] initWithRequest:theRequest];
+	
+	return [response autorelease];
 }
 - (void)sendAsynchronousResponse
 {
