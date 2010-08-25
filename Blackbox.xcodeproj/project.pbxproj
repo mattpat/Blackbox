@@ -31,6 +31,28 @@
 		C952E4F9114F362700FB1C20 /* on.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C952E4F7114F362700FB1C20 /* on.tiff */; };
 		C952E509114F3ABF00FB1C20 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C952E508114F3ABF00FB1C20 /* Localizable.strings */; };
 		C96928E11224B89000CDC4FB /* HTTPDynamicFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C96928E01224B89000CDC4FB /* HTTPDynamicFileResponse.m */; };
+		C96929701224BFDE00CDC4FB /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C969297F1224C3B800CDC4FB /* HBDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C969297E1224C3B800CDC4FB /* HBDemoController.m */; };
+		C96929801224C3C300CDC4FB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		C96929811224C3F400CDC4FB /* BBServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E478114F286700FB1C20 /* BBServer.m */; };
+		C96929821224C3F400CDC4FB /* BBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E47A114F286700FB1C20 /* BBConnection.m */; };
+		C96929831224C3FC00CDC4FB /* BBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E47C114F286700FB1C20 /* BBRequest.m */; };
+		C96929841224C3FC00CDC4FB /* BBDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E47F114F286700FB1C20 /* BBDataResponse.m */; };
+		C96929851224C40600CDC4FB /* HTTPAsyncFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E482114F286700FB1C20 /* HTTPAsyncFileResponse.m */; };
+		C96929861224C40600CDC4FB /* HTTPDynamicFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C96928E01224B89000CDC4FB /* HTTPDynamicFileResponse.m */; };
+		C96929871224C40600CDC4FB /* HTTPAuthenticationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E484114F286700FB1C20 /* HTTPAuthenticationRequest.m */; };
+		C96929881224C40600CDC4FB /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E486114F286700FB1C20 /* HTTPServer.m */; };
+		C96929891224C40600CDC4FB /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E488114F286700FB1C20 /* HTTPConnection.m */; };
+		C969298A1224C40600CDC4FB /* HTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E48A114F286700FB1C20 /* HTTPResponse.m */; };
+		C969298B1224C40D00CDC4FB /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E48D114F286700FB1C20 /* AsyncSocket.m */; };
+		C969298C1224C41400CDC4FB /* DDNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E490114F286700FB1C20 /* DDNumber.m */; };
+		C969298D1224C41400CDC4FB /* DDRange.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E492114F286700FB1C20 /* DDRange.m */; };
+		C969298E1224C41400CDC4FB /* DDData.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E494114F286700FB1C20 /* DDData.m */; };
+		C96929941224C43000CDC4FB /* MainMenuHB.xib in Resources */ = {isa = PBXBuildFile; fileRef = C96929931224C43000CDC4FB /* MainMenuHB.xib */; };
+		C96929AD1224C61600CDC4FB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C952E508114F3ABF00FB1C20 /* Localizable.strings */; };
+		C96929AE1224C61E00CDC4FB /* off.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C952E4F6114F362700FB1C20 /* off.tiff */; };
+		C96929AF1224C61E00CDC4FB /* on.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C952E4F7114F362700FB1C20 /* on.tiff */; };
+		C9692A3C1224D5D000CDC4FB /* HBResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = C9692A3B1224D5D000CDC4FB /* HBResponder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +105,12 @@
 		C96928E01224B89000CDC4FB /* HTTPDynamicFileResponse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPDynamicFileResponse.m; sourceTree = "<group>"; };
 		C96929561224BE6700CDC4FB /* HaleBopp Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HaleBopp Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C96929581224BE6700CDC4FB /* HaleBopp Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HaleBopp Demo-Info.plist"; sourceTree = "<group>"; };
+		C969297D1224C3B800CDC4FB /* HBDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBDemoController.h; sourceTree = "<group>"; };
+		C969297E1224C3B800CDC4FB /* HBDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBDemoController.m; sourceTree = "<group>"; };
+		C96929911224C42A00CDC4FB /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenuHB.xib; sourceTree = "<group>"; };
+		C9692A3A1224D5D000CDC4FB /* HBResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBResponder.h; sourceTree = "<group>"; };
+		C9692A3B1224D5D000CDC4FB /* HBResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBResponder.m; sourceTree = "<group>"; };
+		C9692A521224E3BD00CDC4FB /* HBResponderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBResponderDelegate.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96929701224BFDE00CDC4FB /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -148,6 +177,7 @@
 			isa = PBXGroup;
 			children = (
 				C952E476114F286700FB1C20 /* Blackbox */,
+				C9692A371224D5B400CDC4FB /* HaleBopp */,
 				080E96DDFE201D6D7F000001 /* Classes (Demo App) */,
 				C969294C1224BE2B00CDC4FB /* Classes (HaleBopp Demo App) */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -177,6 +207,7 @@
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				C952E508114F3ABF00FB1C20 /* Localizable.strings */,
+				C96929931224C43000CDC4FB /* MainMenuHB.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -253,8 +284,20 @@
 		C969294C1224BE2B00CDC4FB /* Classes (HaleBopp Demo App) */ = {
 			isa = PBXGroup;
 			children = (
+				C969297D1224C3B800CDC4FB /* HBDemoController.h */,
+				C969297E1224C3B800CDC4FB /* HBDemoController.m */,
 			);
 			name = "Classes (HaleBopp Demo App)";
+			sourceTree = "<group>";
+		};
+		C9692A371224D5B400CDC4FB /* HaleBopp */ = {
+			isa = PBXGroup;
+			children = (
+				C9692A3A1224D5D000CDC4FB /* HBResponder.h */,
+				C9692A3B1224D5D000CDC4FB /* HBResponder.m */,
+				C9692A521224E3BD00CDC4FB /* HBResponderDelegate.h */,
+			);
+			name = HaleBopp;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +376,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C96929941224C43000CDC4FB /* MainMenuHB.xib in Resources */,
+				C96929AD1224C61600CDC4FB /* Localizable.strings in Resources */,
+				C96929AE1224C61E00CDC4FB /* off.tiff in Resources */,
+				C96929AF1224C61E00CDC4FB /* on.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -367,6 +414,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C969297F1224C3B800CDC4FB /* HBDemoController.m in Sources */,
+				C96929801224C3C300CDC4FB /* main.m in Sources */,
+				C96929811224C3F400CDC4FB /* BBServer.m in Sources */,
+				C96929821224C3F400CDC4FB /* BBConnection.m in Sources */,
+				C96929831224C3FC00CDC4FB /* BBRequest.m in Sources */,
+				C96929841224C3FC00CDC4FB /* BBDataResponse.m in Sources */,
+				C96929851224C40600CDC4FB /* HTTPAsyncFileResponse.m in Sources */,
+				C96929861224C40600CDC4FB /* HTTPDynamicFileResponse.m in Sources */,
+				C96929871224C40600CDC4FB /* HTTPAuthenticationRequest.m in Sources */,
+				C96929881224C40600CDC4FB /* HTTPServer.m in Sources */,
+				C96929891224C40600CDC4FB /* HTTPConnection.m in Sources */,
+				C969298A1224C40600CDC4FB /* HTTPResponse.m in Sources */,
+				C969298B1224C40D00CDC4FB /* AsyncSocket.m in Sources */,
+				C969298C1224C41400CDC4FB /* DDNumber.m in Sources */,
+				C969298D1224C41400CDC4FB /* DDRange.m in Sources */,
+				C969298E1224C41400CDC4FB /* DDData.m in Sources */,
+				C9692A3C1224D5D000CDC4FB /* HBResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +459,14 @@
 				C952E505114F3AA100FB1C20 /* English */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		C96929931224C43000CDC4FB /* MainMenuHB.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C96929911224C42A00CDC4FB /* English */,
+			);
+			name = MainMenuHB.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

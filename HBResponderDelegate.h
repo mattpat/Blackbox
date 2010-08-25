@@ -1,8 +1,8 @@
 //
-//  BBConnection.h
-//  Blackbox
+//  HBResponderDelegate.h
+//  HaleBopp
 //
-//  Created by Matt Patenaude on 1/18/10.
+//  Created by Matt Patenaude on 8/24/10.
 //  Copyright 2010 Matt Patenaude.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,30 +24,13 @@
 //  THE SOFTWARE.
 //
 
-#import <Foundation/Foundation.h>
-#import "HTTPConnection.h"
+#import "BBRequest.h"
 
+@protocol HBResponderDelegate
 
-// Forward declarations
-@class BBRequest;
-
-@interface BBConnection : HTTPConnection {
-	BBRequest *asyncRequest;
-	NSString *associatedIdentifier;
-}
-
-// Properties
-- (NSString *)associatedIdentifier;
-- (void)setAssociatedIdentifier:(NSString *)theIdentifier;
-
-// Response methods
-- (NSObject<HTTPResponse> *)responseForRequest:(BBRequest *)theRequest;
-- (void)sendAsynchronousResponse;
-
-// Overridden methods
-- (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)path;
-- (void)replyToHTTPRequest;
-- (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path;
-- (void)processDataChunk:(NSData *)postDataChunk;
+@optional
+- (void)startedLongPollWithRequest:(BBRequest *)theRequest identifier:(NSString *)theIdentifier;
+- (void)requestNoLongerAvailableWithIdentifier:(NSString *)theIdentifier;
 
 @end
+

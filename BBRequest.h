@@ -50,10 +50,12 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 	NSData *responseData;
 	NSMutableDictionary *responseHeaders;
 	NSInteger responseStatusCode;
+	
+	BOOL useAsynchronousResponse;
 }
 
 // Initializers
-- (id)initWithServer:(BBServer *)theServer connection:(BBConnection *)theConnection message:(CFHTTPMessageRef)theMessage;
+- (id)initWithServer:(BBServer *)theServer connection:(BBConnection *)theConnection message:(CFHTTPMessageRef)theMessage asynchronous:(BOOL)async;
 
 // Properties
 - (NSString *)fullPath;
@@ -68,6 +70,7 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 - (NSInteger)responseStatusCode;
 - (NSDictionary *)responseHeaders;
 - (NSData *)responseData;
+- (BBConnection *)connection;
 
 // Methods
 - (void)setResponseContentType:(NSString *)theContentType;
@@ -75,5 +78,6 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 - (void)setResponseHeaderValue:(NSString *)headerValue forHeader:(NSString *)headerName;
 - (void)setResponseString:(NSString *)theString;
 - (void)setResponseBody:(NSData *)theData;
+- (void)sendResponse;	// asynchronous responses only!
 
 @end

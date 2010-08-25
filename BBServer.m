@@ -89,7 +89,7 @@
 }
 - (void)setResponder:(NSObject<BBResponder> *)theResponder forPath:(NSString *)thePath
 {	
-	if ([thePath isEqualToString:@""] || [thePath isEqualToString:@"/"])
+	if ([thePath length] == 0 || [thePath isEqualToString:@"/"])
 		[self setDefaultResponder:theResponder];
 	else
 	{

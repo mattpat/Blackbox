@@ -25,6 +25,7 @@
 //
 
 #import "BBRequest.h"
+#import "BBConnection.h"
 
 
 #pragma mark Functions
@@ -75,7 +76,7 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 @implementation BBRequest
 
 #pragma mark Initializers
-- (id)initWithServer:(BBServer *)theServer connection:(BBConnection *)theConnection message:(CFHTTPMessageRef)theMessage
+- (id)initWithServer:(BBServer *)theServer connection:(BBConnection *)theConnection message:(CFHTTPMessageRef)theMessage asynchronous:(BOOL)async
 {
 	if (self = [super init])
 	{
@@ -83,6 +84,7 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 		connection = [theConnection retain];
 		request = (CFHTTPMessageRef)CFRetain(theMessage);
 		relativePath = nil;
+		useAsynchronousResponse = async;
 		
 		NSURL *requestURL = (NSURL *)CFHTTPMessageCopyRequestURL(request);
 		fullPath = [[[requestURL path] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] copy];
@@ -178,6 +180,10 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 {
 	return responseData;
 }
+- (BBConnection *)connection
+{
+	return connection;
+}
 
 #pragma mark Methods
 - (void)setResponseContentType:(NSString *)theContentType
@@ -204,6 +210,13 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 		responseData = nil;
 	}
 	responseData = [theData copy];
+}
+- (void)sendResponse
+{
+	if (!useAsynchronousResponse)	// do nothing
+		return;
+	
+	[connection sendAsynchronousResponse];
 }
 
 @end

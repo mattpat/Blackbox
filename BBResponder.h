@@ -34,4 +34,7 @@
 
 - (void)handleRequest:(BBRequest *)theRequest;
 
+@optional
+- (BOOL)repliesAsynchronously;
+
 @end

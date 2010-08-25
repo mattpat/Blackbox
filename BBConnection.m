@@ -33,6 +33,39 @@
 
 @implementation BBConnection
 
+#pragma mark Deallocator
+- (void)dealloc
+{
+	[associatedIdentifier release];
+	[asyncRequest release];
+	[super dealloc];
+}
+
+#pragma mark Properties
+- (NSString *)associatedIdentifier
+{
+	return associatedIdentifier;
+}
+- (void)setAssociatedIdentifier:(NSString *)theIdentifier
+{
+	if (associatedIdentifier)
+	{
+		[associatedIdentifier release];
+		associatedIdentifier = nil;
+	}
+	associatedIdentifier = [theIdentifier copy];
+}
+
+#pragma mark Response methods
+- (NSObject<HTTPResponse> *)responseForRequest:(BBRequest *)theRequest
+{
+	return [[[BBDataResponse alloc] initWithRequest:theRequest] autorelease];
+}
+- (void)sendAsynchronousResponse
+{
+	[super replyToHTTPRequest];
+}
+
 #pragma mark Overridden methods
 - (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)path
 {
@@ -40,13 +73,51 @@
 		return YES;
 	return [super supportsMethod:method atPath:path];
 }
+- (void)replyToHTTPRequest
+{
+	NSURL *requestURL = (NSURL *)CFHTTPMessageCopyRequestURL(request);
+	NSObject<BBResponder> *theResponder = [(BBServer *)server responderForPath:[[requestURL path] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	[requestURL release];
+	
+	if ([theResponder respondsToSelector:@selector(repliesAsynchronously)] && [theResponder repliesAsynchronously])
+	{
+		if (asyncRequest)
+		{
+			[asyncRequest release];
+			asyncRequest = nil;
+		}
+		
+		asyncRequest = [[BBRequest alloc] initWithServer:(BBServer *)server connection:self message:request asynchronous:YES];
+		[theResponder handleRequest:asyncRequest];
+	}
+	else
+		[super replyToHTTPRequest];
+}
 - (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path
 {
-	BBRequest *theRequest = [[BBRequest alloc] initWithServer:(BBServer *)server connection:self message:request];
-	NSObject<BBResponder> *theResponder = [(BBServer *)server responderForPath:path];
-	[theResponder handleRequest:theRequest];
+	NSURL *requestURL = (NSURL *)CFHTTPMessageCopyRequestURL(request);
+	NSObject<BBResponder> *theResponder = [(BBServer *)server responderForPath:[[requestURL path] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	[requestURL release];
 	
-	BBDataResponse *theResponse = [[[BBDataResponse alloc] initWithRequest:theRequest] autorelease];
+	BBRequest *theRequest = nil;
+	
+	if ([theResponder respondsToSelector:@selector(repliesAsynchronously)] && [theResponder repliesAsynchronously] && asyncRequest != nil)
+	{
+		theRequest = [asyncRequest retain];
+		
+		if (asyncRequest)
+		{
+			[asyncRequest release];
+			asyncRequest = nil;
+		}
+	}
+	else
+	{
+		theRequest = [[BBRequest alloc] initWithServer:(BBServer *)server connection:self message:request asynchronous:NO];
+		[theResponder handleRequest:theRequest];
+	}
+	
+	NSObject<HTTPResponse> *theResponse = [self responseForRequest:theRequest];
 	[theRequest release];
 	
 	return theResponse;

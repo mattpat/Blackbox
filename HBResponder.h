@@ -1,8 +1,8 @@
 //
-//  BBConnection.h
-//  Blackbox
+//  HBResponder.h
+//  HaleBopp
 //
-//  Created by Matt Patenaude on 1/18/10.
+//  Created by Matt Patenaude on 8/24/10.
 //  Copyright 2010 Matt Patenaude.
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -25,29 +25,29 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "HTTPConnection.h"
+#import "BBResponder.h"
 
 
-// Forward declarations
-@class BBRequest;
-
-@interface BBConnection : HTTPConnection {
-	BBRequest *asyncRequest;
-	NSString *associatedIdentifier;
+@interface HBResponder : NSObject<BBResponder> {
+	NSMutableArray *openRequestIDs;
+	NSMutableDictionary *requests;
+	id delegate;
 }
 
 // Properties
-- (NSString *)associatedIdentifier;
-- (void)setAssociatedIdentifier:(NSString *)theIdentifier;
+@property(assign) id delegate;
 
-// Response methods
-- (NSObject<HTTPResponse> *)responseForRequest:(BBRequest *)theRequest;
-- (void)sendAsynchronousResponse;
+// Push methods
+- (void)pushResponseString:(NSString *)theString toRequestWithIdentifier:(NSString *)theIdentifier;
+- (void)pushResponseString:(NSString *)theString toRequestWithIdentifier:(NSString *)theIdentifier contentType:(NSString *)type;
+- (void)pushResponse:(NSData *)theData toRequestWithIdentifier:(NSString *)theIdentifier contentType:(NSString *)type statusCode:(NSInteger)status;
 
-// Overridden methods
-- (BOOL)supportsMethod:(NSString *)method atPath:(NSString *)path;
-- (void)replyToHTTPRequest;
-- (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path;
-- (void)processDataChunk:(NSData *)postDataChunk;
+// Request fulfillment handlers
+- (void)removeRequestWithIdentifier:(NSString *)theIdentifier;
+- (void)connectionDied:(NSNotification *)theNotification;
+
+// Responder methods (BBResponder)
+- (void)handleRequest:(BBRequest *)theRequest;
+- (BOOL)repliesAsynchronously;
 
 @end
