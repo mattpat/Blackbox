@@ -82,12 +82,20 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 	{
 		server = [theServer retain];
 		connection = [theConnection retain];
-		request = (CFHTTPMessageRef)CFRetain(theMessage);
 		relativePath = nil;
 		useAsynchronousResponse = async;
 		
-		NSURL *requestURL = (NSURL *)CFHTTPMessageCopyRequestURL(request);
+		NSURL *requestURL = (NSURL *)CFHTTPMessageCopyRequestURL(theMessage);
+		HTTPMethod = (NSString *)CFHTTPMessageCopyRequestMethod(theMessage);
 		fullPath = [[[requestURL path] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] copy];
+		
+		NSDictionary *headers = (NSDictionary *)CFHTTPMessageCopyAllHeaderFields(theMessage);
+		requestHeaders = [[NSMutableDictionary alloc] init];
+		for (NSString *key in headers)
+			[requestHeaders setObject:[headers objectForKey:key] forKey:BBNormalizeHeaderName(key)];
+		CFRelease((CFDictionaryRef)headers);
+		
+		postData = (NSData *)CFHTTPMessageCopyBody(theMessage);
 		
 		responseData = [[NSData data] retain];
 		responseHeaders = [[NSMutableDictionary alloc] initWithObjectsAndKeys:@"text/plain", @"Content-Type", nil];
@@ -100,10 +108,9 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 		[requestURL release];
 		
 		postParams = [[NSMutableDictionary alloc] init];
-		NSData *postData = [self rawPostData];
 		if ([postData length] > 0)
 		{
-			if ([[[[self headers] objectForKey:@"X-Propertylist"] lowercaseString] isEqualToString:@"true"])
+			if ([[[self valueForHeader:@"X-PropertyList"] lowercaseString] isEqualToString:@"true"])
 				BBParsePropertyListIntoDictionary([self rawPostData], postParams);
 			else
 				BBParseQueryIntoDictionary([self postString], postParams);
@@ -117,13 +124,15 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 {
 	[server release];
 	[connection release];
-	CFRelease(request);
+	CFRelease((CFStringRef)HTTPMethod);
 	[responseData release];
 	[responseFilePath release];
 	[relativePath release];
 	[fullPath release];
+	[requestHeaders release];
 	[responseHeaders release];
 	[queryString release];
+	CFRelease((CFDataRef)postData);
 	[getParams release];
 	[postParams release];
 	[super dealloc];
@@ -140,13 +149,11 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 }
 - (NSString *)HTTPMethod
 {
-	NSString *method = (NSString *)CFHTTPMessageCopyRequestMethod(request);
-	return [method autorelease];
+	return HTTPMethod;
 }
 - (NSData *)rawPostData
 {
-	NSData *data = (NSData *)CFHTTPMessageCopyBody(request);
-	return [data autorelease];
+	return postData;
 }
 - (NSString *)postString
 {
@@ -155,8 +162,7 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 }
 - (NSDictionary *)headers
 {
-	NSDictionary *headers = (NSDictionary *)CFHTTPMessageCopyAllHeaderFields(request);
-	return [headers autorelease];
+	return requestHeaders;
 }
 - (NSString *)queryString
 {
@@ -192,17 +198,33 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 }
 
 #pragma mark Methods
+- (NSString *)valueForHeader:(NSString *)theHeader
+{
+	return [requestHeaders objectForKey:BBNormalizeHeaderName(theHeader)];
+}
+- (NSString *)valueForResponseHeader:(NSString *)theHeader
+{
+	return [responseHeaders objectForKey:BBNormalizeHeaderName(theHeader)];
+}
 - (void)setResponseContentType:(NSString *)theContentType
 {
 	[responseHeaders setValue:[[theContentType copy] autorelease] forKey:@"Content-Type"];
 }
-- (void)setResponseStatusCode:(int)statusCode
+- (void)setResponseStatusCode:(NSInteger)statusCode
 {
 	responseStatusCode = statusCode;
 }
 - (void)setResponseHeaderValue:(NSString *)headerValue forHeader:(NSString *)headerName
 {
-	[responseHeaders setValue:headerValue forKey:BBNormalizeHeaderName(headerName)];
+	NSArray *keyArray = [responseHeaders allKeys];
+	for (NSString *key in keyArray)
+	{
+		if ([[key lowercaseString] isEqualToString:[headerName lowercaseString]])
+			[responseHeaders removeObjectForKey:key];
+	}
+	
+	if (headerValue != nil)
+		[responseHeaders setObject:headerValue forKey:headerName];
 }
 - (void)setResponseString:(NSString *)theString
 {

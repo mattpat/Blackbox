@@ -40,15 +40,17 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 	BBServer *server;
 	BBConnection *connection;
 	
-	CFHTTPMessageRef request;
+	NSString *HTTPMethod;
 	NSString *fullPath;
 	NSString *relativePath;
 	NSString *queryString;
+	NSData *postData;
 	NSMutableDictionary *getParams;
 	NSMutableDictionary *postParams;
 	
 	NSData *responseData;
 	NSMutableDictionary *responseHeaders;
+	NSMutableDictionary *requestHeaders;
 	NSInteger responseStatusCode;
 	NSString *responseFilePath;
 	
@@ -75,8 +77,10 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 - (BBConnection *)connection;
 
 // Methods
+- (NSString *)valueForHeader:(NSString *)theHeader;
+- (NSString *)valueForResponseHeader:(NSString *)theHeader;
 - (void)setResponseContentType:(NSString *)theContentType;
-- (void)setResponseStatusCode:(int)statusCode;
+- (void)setResponseStatusCode:(NSInteger)statusCode;
 - (void)setResponseHeaderValue:(NSString *)headerValue forHeader:(NSString *)headerName;
 - (void)setResponseString:(NSString *)theString;
 - (void)setResponseBody:(NSData *)theData;
