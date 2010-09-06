@@ -69,6 +69,11 @@
 		defaultResponder = nil;
 	}
 	defaultResponder = [newResponder retain];
+	
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+	if (newResponder && defaultHandler)
+		[self setDefaultHandler:nil];
+#endif
 }
 - (NSObject<BBResponder> *)responderForPath:(NSString *)thePath
 {
@@ -104,6 +109,10 @@
 			thePath = [@"/" stringByAppendingString:thePath];
 		
 		[responders setObject:theResponder forKey:thePath];
+		
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+		[handlers removeObjectForKey:thePath];
+#endif
 	}
 }
 #if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
@@ -119,6 +128,9 @@
 		defaultHandler = nil;
 	}
 	defaultHandler = [theHandler copy];
+	
+	if (theHandler && defaultResponder)
+		[self setDefaultResponder:nil];
 }
 - (BBResponseHandler)handlerForPath:(NSString *)thePath
 {
@@ -154,6 +166,7 @@
 			thePath = [@"/" stringByAppendingString:thePath];
 		
 		[handlers setObject:[[theHandler copy] autorelease] forKey:thePath];
+		[responders removeObjectForKey:thePath];
 	}
 }
 #endif

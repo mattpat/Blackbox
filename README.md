@@ -24,6 +24,21 @@ Requests to paths without an associated responder object are tacitly ignored by 
 
 If you want to play around with it, start with the Blackbox Demo app, included in the project. **Please note** that the demo application links against the `SystemConfiguration` framework; this is *not necessary* to use Blackbox, the framework is only used to get the computer name to display as the placeholder text for "Bonjour Name." This value is obtained automatically if you set the Bonjour name to an empty string (`@""`).
 
+### Using Blocks as Handlers ###
+
+If you're using Blackbox on 10.6+, you can also use blocks to respond to requests rather than having dedicated responder objects:
+
+	[myServer setHandler:^(BBRequest *theRequest){
+		// do stuff with theRequest
+	} forPath:@"/coolbeans"];
+
+Note, however, that block handlers are *always* processed before responders. It is generally inadvisable to use a mixed environment of responder objects and block handlers, but if you do, it is strongly recommended that handlers and responders not share common path prefixes. For example:
+
+	[myServer setHandler:... forPath:@"/generic"];
+	[myServer setResponder:myObj forPath:@"/generic/specific"];
+
+In the above, requests made to `/generic/specific` would in fact be handled by the block handler, not the `myObj` responder, because `/generic/specific` does indeed fall underneath `/generic`, and the handlers are searched for a match first. For this reason, setting a default handler (with `setDefaultHandler:`, like `setDefaultResponder:`) will prevent *any* responder from ever being used.
+
 Projects That Use Blackbox
 --------------------------
 Currently the only known project that uses Blackbox is [Bowtie](http://bowtieapp.com) -- my themeable iTunes controller -- which uses Blackbox to communicate with Bowtie for iPhone and other remote clients.
