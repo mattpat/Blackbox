@@ -83,7 +83,18 @@
 - (void)replyToHTTPRequest
 {
 	NSURL *requestURL = (NSURL *)CFHTTPMessageCopyRequestURL(request);
-	NSObject<BBResponder> *theResponder = [(BBServer *)server responderForPath:[[requestURL path] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
+	NSString *path = [[requestURL path] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+	BBResponseHandler h = [(BBServer *)server handlerForPath:path];
+	if (h)
+	{
+		[super replyToHTTPRequest];
+		return;
+	}
+#endif
+	
+	NSObject<BBResponder> *theResponder = [(BBServer *)server responderForPath:path];
 	[requestURL release];
 	
 	if ([theResponder respondsToSelector:@selector(repliesAsynchronously)] && [theResponder repliesAsynchronously])
@@ -103,10 +114,22 @@
 - (NSObject<HTTPResponse> *)httpResponseForMethod:(NSString *)method URI:(NSString *)path
 {
 	NSURL *requestURL = (NSURL *)CFHTTPMessageCopyRequestURL(request);
-	NSObject<BBResponder> *theResponder = [(BBServer *)server responderForPath:[[requestURL path] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding]];
-	[requestURL release];
-	
+	NSString *rPath = [[requestURL path] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
 	BBRequest *theRequest = nil;
+	
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+	BBResponseHandler h = [server handlerForPath:rPath];
+	if (h)
+	{
+		theRequest = [[BBRequest alloc] initWithServer:(BBServer *)server connection:self message:request asynchronous:NO];
+		h(theRequest);
+	}
+	else
+	{
+#endif
+	
+	NSObject<BBResponder> *theResponder = [(BBServer *)server responderForPath:rPath];
+	[requestURL release];
 	
 	if ([theResponder respondsToSelector:@selector(repliesAsynchronously)] && [theResponder repliesAsynchronously] && asyncRequest != nil)
 	{
@@ -123,7 +146,11 @@
 		theRequest = [[BBRequest alloc] initWithServer:(BBServer *)server connection:self message:request asynchronous:NO];
 		[theResponder handleRequest:theRequest];
 	}
-	
+		
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+	}
+#endif
+		
 	NSObject<HTTPResponse> *theResponse = [self responseForRequest:theRequest];
 	[theRequest release];
 	

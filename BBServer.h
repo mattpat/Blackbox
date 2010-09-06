@@ -27,11 +27,26 @@
 #import <Foundation/Foundation.h>
 #import "HTTPServer.h"
 #import "BBResponder.h"
+#import "BBRequest.h"
 
+
+// Constants
+#ifndef MAC_OS_X_VERSION_10_6
+#define MAC_OS_X_VERSION_10_6 1060
+#endif
+
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+// Types
+typedef void (^BBResponseHandler)(BBRequest *);
+#endif
 
 @interface BBServer : HTTPServer {
 	NSObject<BBResponder> *defaultResponder;
 	NSMutableDictionary *responders;
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+	BBResponseHandler defaultHandler;
+	NSMutableDictionary *handlers;
+#endif
 }
 
 // Responder methods
@@ -39,5 +54,11 @@
 - (void)setDefaultResponder:(NSObject<BBResponder> *)newResponder;
 - (NSObject<BBResponder> *)responderForPath:(NSString *)thePath;
 - (void)setResponder:(NSObject<BBResponder> *)theResponder forPath:(NSString *)thePath;
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+- (BBResponseHandler)defaultHandler;
+- (void)setDefaultHandler:(BBResponseHandler)theHandler;
+- (BBResponseHandler)handlerForPath:(NSString *)thePath;
+- (void)setHandler:(BBResponseHandler)theHandler forPath:(NSString *)thePath;
+#endif
 
 @end

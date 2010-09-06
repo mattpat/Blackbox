@@ -37,6 +37,9 @@
 	{
 		connectionClass = [BBConnection self];
 		responders = [[NSMutableDictionary alloc] init];
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+		handlers = [[NSMutableDictionary alloc] init];
+#endif
 	}
 	return self;
 }
@@ -46,6 +49,10 @@
 {
 	[defaultResponder release];
 	[responders release];
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+	[defaultHandler release];
+	[handlers release];
+#endif
 	[super dealloc];
 }
 
@@ -99,5 +106,56 @@
 		[responders setObject:theResponder forKey:thePath];
 	}
 }
+#if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
+- (BBResponseHandler)defaultHandler
+{
+	return defaultHandler;
+}
+- (void)setDefaultHandler:(BBResponseHandler)theHandler
+{
+	if (defaultHandler)
+	{
+		[defaultHandler release];
+		defaultHandler = nil;
+	}
+	defaultHandler = [theHandler copy];
+}
+- (BBResponseHandler)handlerForPath:(NSString *)thePath
+{
+	NSString *matchPath = thePath;
+	BBResponseHandler theHandler = defaultHandler;
+	
+	if ([matchPath length] < 1)
+		matchPath = @"/";
+	
+	if (![[matchPath substringToIndex:1] isEqualToString:@"/"])
+		matchPath = [@"/" stringByAppendingString:matchPath];
+	
+	while (matchPath && ![matchPath isEqualToString:@"/"])
+	{
+		if ([[handlers allKeys] containsObject:matchPath])
+		{
+			theHandler = [handlers objectForKey:matchPath];
+			break;
+		}
+		else
+			matchPath = [matchPath stringByDeletingLastPathComponent];
+	}
+	
+	return theHandler;
+}
+- (void)setHandler:(BBResponseHandler)theHandler forPath:(NSString *)thePath
+{
+	if ([thePath length] == 0 || [thePath isEqualToString:@"/"])
+		[self setDefaultHandler:theHandler];
+	else
+	{
+		if (![[thePath substringToIndex:1] isEqualToString:@"/"])
+			thePath = [@"/" stringByAppendingString:thePath];
+		
+		[handlers setObject:[[theHandler copy] autorelease] forKey:thePath];
+	}
+}
+#endif
 
 @end
