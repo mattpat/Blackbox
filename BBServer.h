@@ -58,7 +58,7 @@ typedef void (^BBResponseHandler)(BBRequest *);
 - (BBResponseHandler)defaultHandler;
 - (void)setDefaultHandler:(BBResponseHandler)theHandler;
 - (BBResponseHandler)handlerForPath:(NSString *)thePath;
-- (void)setHandler:(BBResponseHandler)theHandler forPath:(NSString *)thePath;
+- (void)setHandlerForPath:(NSString *)thePath handler:(BBResponseHandler)theHandler;
 #endif
 
 @end

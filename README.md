@@ -28,13 +28,13 @@ If you want to play around with it, start with the Blackbox Demo app, included i
 
 If you're using Blackbox on 10.6+, you can also use blocks to respond to requests rather than having dedicated responder objects:
 
-	[myServer setHandler:^(BBRequest *theRequest){
+	[myServer setHandlerForPath:@"/coolbeans" handler:^(BBRequest *theRequest){
 		// do stuff with theRequest
-	} forPath:@"/coolbeans"];
+	}];
 
 Note, however, that block handlers are *always* processed before responders. It is generally inadvisable to use a mixed environment of responder objects and block handlers, but if you do, it is strongly recommended that handlers and responders not share common path prefixes. For example:
 
-	[myServer setHandler:... forPath:@"/generic"];
+	[myServer setHandlerForPath:@"/generic" handler:^{...}];
 	[myServer setResponder:myObj forPath:@"/generic/specific"];
 
 In the above, requests made to `/generic/specific` would in fact be handled by the block handler, not the `myObj` responder, because `/generic/specific` does indeed fall underneath `/generic`, and the handlers are searched for a match first. For this reason, setting a default handler (with `setDefaultHandler:`, like `setDefaultResponder:`) will prevent *any* responder from ever being used.

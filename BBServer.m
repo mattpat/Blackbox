@@ -156,7 +156,7 @@
 	
 	return theHandler;
 }
-- (void)setHandler:(BBResponseHandler)theHandler forPath:(NSString *)thePath
+- (void)setHandlerForPath:(NSString *)thePath handler:(BBResponseHandler)theHandler
 {
 	if ([thePath length] == 0 || [thePath isEqualToString:@"/"])
 		[self setDefaultHandler:theHandler];

@@ -118,7 +118,7 @@
 	BBRequest *theRequest = nil;
 	
 #if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
-	BBResponseHandler h = [server handlerForPath:rPath];
+	BBResponseHandler h = [(BBServer *)server handlerForPath:rPath];
 	if (h)
 	{
 		theRequest = [[BBRequest alloc] initWithServer:(BBServer *)server connection:self message:request asynchronous:NO];

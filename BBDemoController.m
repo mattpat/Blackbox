@@ -53,10 +53,10 @@
 	// if we're on 10.6, we can also use blocks!
 	// visit "/blocks" to see an example
 #if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
-	[server setHandler:^(BBRequest *theRequest){
+	[server setHandlerForPath:@"/blocks" handler:^(BBRequest *theRequest){
 		[theRequest setResponseContentType:@"text/html"];
 		[theRequest setResponseString:@"<h1>Blocks Demo</h1><p>This response was returned using a block.</p>"];
-	} forPath:@"/blocks"];
+	}];
 #endif
 }
 
