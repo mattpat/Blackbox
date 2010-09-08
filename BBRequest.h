@@ -41,7 +41,7 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 	BBConnection *connection;
 	
 	NSString *HTTPMethod;
-	NSString *fullPath;
+	NSURL *requestURL;
 	NSString *relativePath;
 	NSString *queryString;
 	NSData *postData;
@@ -61,6 +61,7 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 - (id)initWithServer:(BBServer *)theServer connection:(BBConnection *)theConnection message:(CFHTTPMessageRef)theMessage asynchronous:(BOOL)async;
 
 // Properties
+- (NSURL *)requestURL;
 - (NSString *)fullPath;
 - (NSString *)relativePath;
 - (NSString *)HTTPMethod;

@@ -85,9 +85,11 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 		relativePath = nil;
 		useAsynchronousResponse = async;
 		
-		NSURL *requestURL = (NSURL *)CFHTTPMessageCopyRequestURL(theMessage);
+		CFURLRef originalURL = CFHTTPMessageCopyRequestURL(theMessage);
+		requestURL = [[(NSURL *)originalURL standardizedURL] retain];
+		CFRelease(originalURL);
+		
 		HTTPMethod = (NSString *)CFHTTPMessageCopyRequestMethod(theMessage);
-		fullPath = [[[requestURL path] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding] copy];
 		
 		NSDictionary *headers = (NSDictionary *)CFHTTPMessageCopyAllHeaderFields(theMessage);
 		requestHeaders = [[NSMutableDictionary alloc] init];
@@ -104,8 +106,7 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 		
 		getParams = [[NSMutableDictionary alloc] init];
 		queryString = [[requestURL query] copy];
-		BBParseQueryIntoDictionary(queryString, getParams);			
-		[requestURL release];
+		BBParseQueryIntoDictionary(queryString, getParams);
 		
 		postParams = [[NSMutableDictionary alloc] init];
 		if ([postData length] > 0)
@@ -125,23 +126,28 @@ void BBParsePropertyListIntoDictionary(NSData *postData, NSMutableDictionary *di
 	[server release];
 	[connection release];
 	CFRelease((CFStringRef)HTTPMethod);
+	[requestURL release];
 	[responseData release];
 	[responseFilePath release];
 	[relativePath release];
-	[fullPath release];
 	[requestHeaders release];
 	[responseHeaders release];
 	[queryString release];
-	CFRelease((CFDataRef)postData);
+	if (postData)
+		CFRelease((CFDataRef)postData);
 	[getParams release];
 	[postParams release];
 	[super dealloc];
 }
 
 #pragma mark Properties
+- (NSURL *)requestURL
+{
+	return requestURL;
+}
 - (NSString *)fullPath
 {
-	return fullPath;
+	return [requestURL path];
 }
 - (NSString *)relativePath
 {

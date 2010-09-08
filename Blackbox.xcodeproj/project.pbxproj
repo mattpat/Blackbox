@@ -11,6 +11,8 @@
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		C916C15F12370FA20016FA63 /* BBDirectoryResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = C916C15E12370FA20016FA63 /* BBDirectoryResponder.m */; };
+		C916C16012370FA20016FA63 /* BBDirectoryResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = C916C15E12370FA20016FA63 /* BBDirectoryResponder.m */; };
 		C92AE05D11505DA20049F7F2 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C92AE05C11505DA20049F7F2 /* SystemConfiguration.framework */; };
 		C92AE0C4115060EB0049F7F2 /* BBDemoLiveResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = C92AE0C3115060EB0049F7F2 /* BBDemoLiveResponder.m */; };
 		C952E495114F286700FB1C20 /* BBServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E478114F286700FB1C20 /* BBServer.m */; };
@@ -67,6 +69,8 @@
 		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
 		8D1107310486CEB800E47090 /* Blackbox-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Blackbox-Info.plist"; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* Blackbox Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Blackbox Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C916C15D12370FA20016FA63 /* BBDirectoryResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDirectoryResponder.h; sourceTree = "<group>"; };
+		C916C15E12370FA20016FA63 /* BBDirectoryResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDirectoryResponder.m; sourceTree = "<group>"; };
 		C92AE05C11505DA20049F7F2 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = /System/Library/Frameworks/SystemConfiguration.framework; sourceTree = "<absolute>"; };
 		C92AE0C2115060EB0049F7F2 /* BBDemoLiveResponder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBDemoLiveResponder.h; sourceTree = "<group>"; };
 		C92AE0C3115060EB0049F7F2 /* BBDemoLiveResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBDemoLiveResponder.m; sourceTree = "<group>"; };
@@ -239,6 +243,8 @@
 				C952E47D114F286700FB1C20 /* BBResponder.h */,
 				C952E47E114F286700FB1C20 /* BBDataResponse.h */,
 				C952E47F114F286700FB1C20 /* BBDataResponse.m */,
+				C916C15D12370FA20016FA63 /* BBDirectoryResponder.h */,
+				C916C15E12370FA20016FA63 /* BBDirectoryResponder.m */,
 			);
 			name = Blackbox;
 			sourceTree = "<group>";
@@ -411,6 +417,7 @@
 				C952E4D8114F32A400FB1C20 /* BBDemoController.m in Sources */,
 				C92AE0C4115060EB0049F7F2 /* BBDemoLiveResponder.m in Sources */,
 				C96928E11224B89000CDC4FB /* HTTPDynamicFileResponse.m in Sources */,
+				C916C16012370FA20016FA63 /* BBDirectoryResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +442,7 @@
 				C969298D1224C41400CDC4FB /* DDRange.m in Sources */,
 				C969298E1224C41400CDC4FB /* DDData.m in Sources */,
 				C9692A3C1224D5D000CDC4FB /* HBResponder.m in Sources */,
+				C916C15F12370FA20016FA63 /* BBDirectoryResponder.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
