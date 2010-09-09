@@ -84,6 +84,7 @@
 {
 	NSURL *requestURL = (NSURL *)CFHTTPMessageCopyRequestURL(request);
 	NSString *path = [[requestURL path] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	CFRelease((CFURLRef)requestURL);
 	
 #if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
 	BBResponseHandler h = [(BBServer *)server handlerForPath:path];
@@ -95,7 +96,6 @@
 #endif
 	
 	NSObject<BBResponder> *theResponder = [(BBServer *)server responderForPath:path];
-	[requestURL release];
 	
 	if ([theResponder respondsToSelector:@selector(repliesAsynchronously)] && [theResponder repliesAsynchronously])
 	{
@@ -115,6 +115,8 @@
 {
 	NSURL *requestURL = (NSURL *)CFHTTPMessageCopyRequestURL(request);
 	NSString *rPath = [[requestURL path] stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+	CFRelease((CFURLRef)requestURL);
+	
 	BBRequest *theRequest = nil;
 	
 #if MAC_OS_X_VERSION_MAX_ALLOWED >= MAC_OS_X_VERSION_10_6
@@ -129,7 +131,6 @@
 #endif
 	
 	NSObject<BBResponder> *theResponder = [(BBServer *)server responderForPath:rPath];
-	[requestURL release];
 	
 	if ([theResponder respondsToSelector:@selector(repliesAsynchronously)] && [theResponder repliesAsynchronously] && asyncRequest != nil)
 	{
