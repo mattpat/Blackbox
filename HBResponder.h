@@ -54,23 +54,20 @@
 	NSMutableDictionary *requests;
 	id delegate;
 	
-	NSMutableDictionary *clientStates;
-	NSMutableDictionary *clientSessionKeys;
-	NSMutableDictionary *clientFeatures;
-	NSMutableDictionary *clientPollRequests;
-	NSMutableDictionary *clientPendingPushes;
-	NSMutableDictionary *clientPendingReceipts;
+	NSMutableSet *openChannels;
+	NSMutableDictionary *channelToRequestMap;
 }
 
 // Properties
 @property(assign) id delegate;
 
 // High-level client methods
-- (NSString *)pushString:(NSString *)theString toClient:(NSString *)theIdentifier;
-- (NSString *)pushString:(NSString *)theString contentType:(NSString *)type toClient:(NSString *)theIdentifier;
-- (NSString *)pushPropertyList:(id)thePlist toClient:(NSString *)theIdentifier;
-- (NSString *)pushData:(NSData *)theData contentType:(NSString *)type headers:(NSDictionary *)headers toClient:(NSString *)theIdentifier;
-- (BOOL)pushWithIdentifier:(NSString *)pushID hasCompletedForClient:(NSString *)theIdentifier;
+- (BOOL)createChannel:(NSString *)channelName;
+- (BOOL)destroyChannel:(NSString *)channelName;
+- (BOOL)pushString:(NSString *)theString toChannel:(NSString *)theChannel;
+- (BOOL)pushString:(NSString *)theString contentType:(NSString *)type toChannel:(NSString *)theChannel;
+- (BOOL)pushPropertyList:(id)thePlist toChannel:(NSString *)theChannel;
+- (BOOL)pushData:(NSData *)theData contentType:(NSString *)type headers:(NSDictionary *)headers toChannel:(NSString *)theChannel;
 
 // Low-level push methods
 - (void)pushResponseString:(NSString *)theString toRequestWithIdentifier:(NSString *)theIdentifier;

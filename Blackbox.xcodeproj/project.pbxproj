@@ -56,6 +56,27 @@
 		C96929AF1224C61E00CDC4FB /* on.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C952E4F7114F362700FB1C20 /* on.tiff */; };
 		C9692A3C1224D5D000CDC4FB /* HBResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = C9692A3B1224D5D000CDC4FB /* HBResponder.m */; };
 		C9692B0F1225005D00CDC4FB /* comet.html in Resources */ = {isa = PBXBuildFile; fileRef = C9692B0E1225005D00CDC4FB /* comet.html */; };
+		C991CF48126E46E400DEB793 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
+		C991CF4E126E471700DEB793 /* MainMenuHBC.xib in Resources */ = {isa = PBXBuildFile; fileRef = C991CF4D126E471700DEB793 /* MainMenuHBC.xib */; };
+		C991CF55126E47F900DEB793 /* HBCDemoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C991CF54126E47F900DEB793 /* HBCDemoController.m */; };
+		C991CF56126E48FF00DEB793 /* off.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C952E4F6114F362700FB1C20 /* off.tiff */; };
+		C991CF57126E48FF00DEB793 /* on.tiff in Resources */ = {isa = PBXBuildFile; fileRef = C952E4F7114F362700FB1C20 /* on.tiff */; };
+		C991CF67126E4C6B00DEB793 /* BBServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E478114F286700FB1C20 /* BBServer.m */; };
+		C991CF68126E4C6B00DEB793 /* BBConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E47A114F286700FB1C20 /* BBConnection.m */; };
+		C991CF69126E4C6B00DEB793 /* BBRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E47C114F286700FB1C20 /* BBRequest.m */; };
+		C991CF6A126E4C6B00DEB793 /* BBDataResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E47F114F286700FB1C20 /* BBDataResponse.m */; };
+		C991CF6B126E4C6B00DEB793 /* BBDirectoryResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = C916C15E12370FA20016FA63 /* BBDirectoryResponder.m */; };
+		C991CF6C126E4C7200DEB793 /* DDNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E490114F286700FB1C20 /* DDNumber.m */; };
+		C991CF6D126E4C7200DEB793 /* DDRange.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E492114F286700FB1C20 /* DDRange.m */; };
+		C991CF6E126E4C7200DEB793 /* DDData.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E494114F286700FB1C20 /* DDData.m */; };
+		C991CF6F126E4C7A00DEB793 /* AsyncSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E48D114F286700FB1C20 /* AsyncSocket.m */; };
+		C991CF70126E4C8400DEB793 /* HTTPAsyncFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E482114F286700FB1C20 /* HTTPAsyncFileResponse.m */; };
+		C991CF71126E4C8400DEB793 /* HTTPDynamicFileResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C96928E01224B89000CDC4FB /* HTTPDynamicFileResponse.m */; };
+		C991CF72126E4C8400DEB793 /* HTTPAuthenticationRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E484114F286700FB1C20 /* HTTPAuthenticationRequest.m */; };
+		C991CF73126E4C8400DEB793 /* HTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E486114F286700FB1C20 /* HTTPServer.m */; };
+		C991CF74126E4C8400DEB793 /* HTTPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E488114F286700FB1C20 /* HTTPConnection.m */; };
+		C991CF75126E4C8400DEB793 /* HTTPResponse.m in Sources */ = {isa = PBXBuildFile; fileRef = C952E48A114F286700FB1C20 /* HTTPResponse.m */; };
+		C991CF95126E4CCE00DEB793 /* HBResponder.m in Sources */ = {isa = PBXBuildFile; fileRef = C9692A3B1224D5D000CDC4FB /* HBResponder.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -117,6 +138,11 @@
 		C9692A3B1224D5D000CDC4FB /* HBResponder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBResponder.m; sourceTree = "<group>"; };
 		C9692A521224E3BD00CDC4FB /* HBResponderDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBResponderDelegate.h; sourceTree = "<group>"; };
 		C9692B0E1225005D00CDC4FB /* comet.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = comet.html; sourceTree = "<group>"; };
+		C991CF42126E469D00DEB793 /* HaleBopp Channel Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "HaleBopp Channel Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C991CF44126E469D00DEB793 /* HaleBopp Channel Demo-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "HaleBopp Channel Demo-Info.plist"; sourceTree = "<group>"; };
+		C991CF4B126E471000DEB793 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenuHBC.xib; sourceTree = "<group>"; };
+		C991CF53126E47F900DEB793 /* HBCDemoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HBCDemoController.h; sourceTree = "<group>"; };
+		C991CF54126E47F900DEB793 /* HBCDemoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HBCDemoController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +160,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C96929701224BFDE00CDC4FB /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C991CF40126E469D00DEB793 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -175,6 +208,7 @@
 			children = (
 				8D1107320486CEB800E47090 /* Blackbox Demo.app */,
 				C96929561224BE6700CDC4FB /* HaleBopp Demo.app */,
+				C991CF42126E469D00DEB793 /* HaleBopp Channel Demo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -186,6 +220,7 @@
 				C9692A371224D5B400CDC4FB /* HaleBopp */,
 				080E96DDFE201D6D7F000001 /* Classes (Demo App) */,
 				C969294C1224BE2B00CDC4FB /* Classes (HaleBopp Demo App) */,
+				C991CF3B126E467700DEB793 /* Classes (HaleBopp Channel Demo) */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
@@ -210,11 +245,13 @@
 				C952E4F7114F362700FB1C20 /* on.tiff */,
 				8D1107310486CEB800E47090 /* Blackbox-Info.plist */,
 				C96929581224BE6700CDC4FB /* HaleBopp Demo-Info.plist */,
+				C991CF44126E469D00DEB793 /* HaleBopp Channel Demo-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
 				C952E508114F3ABF00FB1C20 /* Localizable.strings */,
 				C96929931224C43000CDC4FB /* MainMenuHB.xib */,
 				C9692B0E1225005D00CDC4FB /* comet.html */,
+				C991CF4D126E471700DEB793 /* MainMenuHBC.xib */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -309,6 +346,15 @@
 			name = HaleBopp;
 			sourceTree = "<group>";
 		};
+		C991CF3B126E467700DEB793 /* Classes (HaleBopp Channel Demo) */ = {
+			isa = PBXGroup;
+			children = (
+				C991CF53126E47F900DEB793 /* HBCDemoController.h */,
+				C991CF54126E47F900DEB793 /* HBCDemoController.m */,
+			);
+			name = "Classes (HaleBopp Channel Demo)";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -347,6 +393,23 @@
 			productReference = C96929561224BE6700CDC4FB /* HaleBopp Demo.app */;
 			productType = "com.apple.product-type.application";
 		};
+		C991CF41126E469D00DEB793 /* HaleBopp Channel Demo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C991CF47126E469D00DEB793 /* Build configuration list for PBXNativeTarget "HaleBopp Channel Demo" */;
+			buildPhases = (
+				C991CF3E126E469D00DEB793 /* Resources */,
+				C991CF3F126E469D00DEB793 /* Sources */,
+				C991CF40126E469D00DEB793 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "HaleBopp Channel Demo";
+			productName = "HaleBopp Channel Demo";
+			productReference = C991CF42126E469D00DEB793 /* HaleBopp Channel Demo.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -364,6 +427,7 @@
 			targets = (
 				8D1107260486CEB800E47090 /* Blackbox Demo */,
 				C96929551224BE6700CDC4FB /* HaleBopp Demo */,
+				C991CF41126E469D00DEB793 /* HaleBopp Channel Demo */,
 			);
 		};
 /* End PBXProject section */
@@ -390,6 +454,16 @@
 				C96929AE1224C61E00CDC4FB /* off.tiff in Resources */,
 				C96929AF1224C61E00CDC4FB /* on.tiff in Resources */,
 				C9692B0F1225005D00CDC4FB /* comet.html in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C991CF3E126E469D00DEB793 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C991CF4E126E471700DEB793 /* MainMenuHBC.xib in Resources */,
+				C991CF56126E48FF00DEB793 /* off.tiff in Resources */,
+				C991CF57126E48FF00DEB793 /* on.tiff in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,6 +520,31 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		C991CF3F126E469D00DEB793 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C991CF48126E46E400DEB793 /* main.m in Sources */,
+				C991CF55126E47F900DEB793 /* HBCDemoController.m in Sources */,
+				C991CF67126E4C6B00DEB793 /* BBServer.m in Sources */,
+				C991CF68126E4C6B00DEB793 /* BBConnection.m in Sources */,
+				C991CF69126E4C6B00DEB793 /* BBRequest.m in Sources */,
+				C991CF6A126E4C6B00DEB793 /* BBDataResponse.m in Sources */,
+				C991CF6B126E4C6B00DEB793 /* BBDirectoryResponder.m in Sources */,
+				C991CF6C126E4C7200DEB793 /* DDNumber.m in Sources */,
+				C991CF6D126E4C7200DEB793 /* DDRange.m in Sources */,
+				C991CF6E126E4C7200DEB793 /* DDData.m in Sources */,
+				C991CF6F126E4C7A00DEB793 /* AsyncSocket.m in Sources */,
+				C991CF70126E4C8400DEB793 /* HTTPAsyncFileResponse.m in Sources */,
+				C991CF71126E4C8400DEB793 /* HTTPDynamicFileResponse.m in Sources */,
+				C991CF72126E4C8400DEB793 /* HTTPAuthenticationRequest.m in Sources */,
+				C991CF73126E4C8400DEB793 /* HTTPServer.m in Sources */,
+				C991CF74126E4C8400DEB793 /* HTTPConnection.m in Sources */,
+				C991CF75126E4C8400DEB793 /* HTTPResponse.m in Sources */,
+				C991CF95126E4CCE00DEB793 /* HBResponder.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -479,6 +578,14 @@
 				C96929911224C42A00CDC4FB /* English */,
 			);
 			name = MainMenuHB.xib;
+			sourceTree = "<group>";
+		};
+		C991CF4D126E471700DEB793 /* MainMenuHBC.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C991CF4B126E471000DEB793 /* English */,
+			);
+			name = MainMenuHBC.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -589,6 +696,54 @@
 			};
 			name = Release;
 		};
+		C991CF45126E469D00DEB793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "HaleBopp Channel Demo-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "HaleBopp Channel Demo";
+			};
+			name = Debug;
+		};
+		C991CF46126E469D00DEB793 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "$(SYSTEM_LIBRARY_DIR)/Frameworks/AppKit.framework/Headers/AppKit.h";
+				INFOPLIST_FILE = "HaleBopp Channel Demo-Info.plist";
+				INSTALL_PATH = "$(HOME)/Applications";
+				OTHER_LDFLAGS = (
+					"-framework",
+					Foundation,
+					"-framework",
+					AppKit,
+				);
+				PREBINDING = NO;
+				PRODUCT_NAME = "HaleBopp Channel Demo";
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -615,6 +770,15 @@
 			buildConfigurations = (
 				C96929591224BE6700CDC4FB /* Debug */,
 				C969295A1224BE6700CDC4FB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C991CF47126E469D00DEB793 /* Build configuration list for PBXNativeTarget "HaleBopp Channel Demo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C991CF45126E469D00DEB793 /* Debug */,
+				C991CF46126E469D00DEB793 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
