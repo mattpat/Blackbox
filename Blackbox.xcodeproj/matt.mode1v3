@@ -229,8 +229,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -281,8 +279,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>18</integer>
-									<integer>16</integer>
+									<integer>30</integer>
+									<integer>28</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -317,12 +315,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>HBResponder.m</string>
+								<string>HBCDemoController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -330,11 +330,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>HBResponder.m</string>
+										<string>HBCDemoController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C991CF9A126E4CD500DEB793</string>
+										<string>C991CFA8126E4E7100DEB793</string>
 										<key>history</key>
 										<array>
 											<string>C952E4A5114F28CB00FB1C20</string>
@@ -362,18 +362,14 @@
 											<string>C9D501871239AC3200E365CE</string>
 											<string>C991CF08126E3BDA00DEB793</string>
 											<string>C991CF1C126E3C3C00DEB793</string>
-											<string>C991CF7E126E4CA800DEB793</string>
 											<string>C991CF7F126E4CA800DEB793</string>
 											<string>C991CF80126E4CA800DEB793</string>
 											<string>C991CF81126E4CA800DEB793</string>
 											<string>C991CF82126E4CA800DEB793</string>
 											<string>C991CF84126E4CA800DEB793</string>
 											<string>C991CF85126E4CA800DEB793</string>
-											<string>C991CF86126E4CA800DEB793</string>
 											<string>C991CF87126E4CA800DEB793</string>
 											<string>C991CF88126E4CA800DEB793</string>
-											<string>C991CF89126E4CA800DEB793</string>
-											<string>C991CF8A126E4CA800DEB793</string>
 											<string>C991CF8B126E4CA800DEB793</string>
 											<string>C991CF8C126E4CA800DEB793</string>
 											<string>C991CF8D126E4CA800DEB793</string>
@@ -382,7 +378,11 @@
 											<string>C991CF90126E4CA800DEB793</string>
 											<string>C991CF91126E4CA800DEB793</string>
 											<string>C991CF98126E4CD500DEB793</string>
-											<string>C991CF99126E4CD500DEB793</string>
+											<string>C991CFA3126E4E7100DEB793</string>
+											<string>C991CFA4126E4E7100DEB793</string>
+											<string>C991CFA5126E4E7100DEB793</string>
+											<string>C991CFA6126E4E7100DEB793</string>
+											<string>C991CFA7126E4E7100DEB793</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -580,13 +580,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>C991CF9B126E4CD500DEB793</string>
+		<string>C991CFA9126E4E7100DEB793</string>
 		<string>C991CF13126E3BDA00DEB793</string>
 		<string>C991CF14126E3BDA00DEB793</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>C92AE0D6115063CF0049F7F2</string>
 		<string>C9CBAEC4114F27FD0030D309</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/matt/Blackbox/Blackbox.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -963,7 +963,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

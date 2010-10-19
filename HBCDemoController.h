@@ -39,6 +39,9 @@
 - (IBAction)startStopServer:(id)sender;
 - (IBAction)pushStringToSelectedChannel:(id)sender;
 
+// HaleBopp responder delegate methods
+- (BOOL)responder:(HBResponder *)responder allowConnectionToNonexistentChannelWithRequest:(BBRequest *)theRequest;
+
 // Channel management methods
 - (IBAction)addChannel:(id)sender;
 - (IBAction)removeChannel:(id)sender;

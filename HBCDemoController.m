@@ -94,6 +94,12 @@
 	}
 }
 
+#pragma mark HaleBopp responder delegate methods
+- (BOOL)responder:(HBResponder *)responder allowConnectionToNonexistentChannelWithRequest:(BBRequest *)theRequest
+{
+	return NO;
+}
+
 #pragma mark Channel management methods
 - (IBAction)addChannel:(id)sender
 {
