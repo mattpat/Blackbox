@@ -24,13 +24,32 @@
 //  THE SOFTWARE.
 //
 
+#import "HBResponder.h"
 #import "BBRequest.h"
 
 @protocol HBResponderDelegate
 
 @optional
-- (void)startedLongPollWithRequest:(BBRequest *)theRequest identifier:(NSString *)theIdentifier;
-- (void)requestNoLongerAvailableWithIdentifier:(NSString *)theIdentifier;
+// ## High-level ##
+// Client registration
+- (BOOL)responder:(HBResponder *)responder allowRegistrationForClient:(NSString *)theIdentifier withRequest:(BBRequest *)theRequest;
+- (void)responder:(HBResponder *)responder clientRegistered:(NSString *)theIdentifier withRequest:(BBRequest *)theRequest;
+- (void)responder:(HBResponder *)responder clientUnregistered:(NSString *)theIdentifier withRequest:(BBRequest *)theRequest;
+
+// Client status
+- (void)responder:(HBResponder *)responder client:(NSString *)theIdentifier hasChangedStatus:(NSString *)status withRequest:(BBRequest *)theRequest;
+- (void)responder:(HBResponder *)responder pushDispatched:(NSString *)pushID forClient:(NSString *)theIdentifier;
+- (void)responder:(HBResponder *)responder pushCompleted:(NSString *)pushID forClient:(NSString *)theIdentifier;
+
+// Security policies (implement with caution)
+- (BOOL)requireSecureHashesForResponder:(HBResponder *)responder;	// VERY VERY DANGEROUS TO RETURN NO!!!
+- (BOOL)responder:(HBResponder *)responder allowReregistrationWithoutSecureHashForRequest:(BBRequest *)theRequest;	// DANGEROUS!!!
+- (BOOL)responder:(HBResponder *)responder allowUnregistrationWithoutSecureHashForRequest:(BBRequest *)theRequest;	// DANGEROUS!!!
+- (NSTimeInterval)secureHashTimestampThresholdForResponder:(HBResponder *)responder;	// returning above 900 (15 minutes) is unwise!
+
+// ## Low-level ##
+- (void)responder:(HBResponder *)responder startedLongPollWithRequest:(BBRequest *)theRequest identifier:(NSString *)theIdentifier;
+- (void)responder:(HBResponder *)responder requestNoLongerAvailableWithIdentifier:(NSString *)theIdentifier;
 
 @end
 

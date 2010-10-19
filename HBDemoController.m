@@ -120,7 +120,7 @@
 }
 
 #pragma mark HaleBopp delegate methods (HBResponderDelegate)
-- (void)startedLongPollWithRequest:(BBRequest *)theRequest identifier:(NSString *)theIdentifier
+- (void)responder:(HBResponder *)responder startedLongPollWithRequest:(BBRequest *)theRequest identifier:(NSString *)theIdentifier
 {
 	[openConnections addObject:theIdentifier];
 	
@@ -131,7 +131,7 @@
 	
 	[connectionTable reloadData];
 }
-- (void)requestNoLongerAvailableWithIdentifier:(NSString *)theIdentifier
+- (void)responder:(HBResponder *)responder requestNoLongerAvailableWithIdentifier:(NSString *)theIdentifier
 {
 	NSInteger idx = [openConnections indexOfObject:theIdentifier];
 	[openConnections removeObjectAtIndex:idx];

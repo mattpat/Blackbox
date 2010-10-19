@@ -44,8 +44,8 @@
 - (void)handleRequest:(BBRequest *)theRequest;
 
 // HaleBopp delegate methods (HBResponderDelegate)
-- (void)startedLongPollWithRequest:(BBRequest *)theRequest identifier:(NSString *)theIdentifier;
-- (void)requestNoLongerAvailableWithIdentifier:(NSString *)theIdentifier;
+- (void)responder:(HBResponder *)responder startedLongPollWithRequest:(BBRequest *)theRequest identifier:(NSString *)theIdentifier;
+- (void)responder:(HBResponder *)responder requestNoLongerAvailableWithIdentifier:(NSString *)theIdentifier;
 
 // Table data source methods
 - (NSInteger)numberOfRowsInTableView:(NSTableView *)aTableView;

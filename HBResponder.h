@@ -28,26 +28,53 @@
 #import "BBResponder.h"
 
 
+// Constants
+#define HBDefaultHashTimestampThreshold 900
+
+#define HBClientStateActive @"active"
+#define HBClientStateIdle @"idle"
+
+#define HBClientActionRegister @"register"
+#define HBClientActionUnregister @"unregister"
+#define HBClientActionPoll @"poll"
+#define HBClientActionIdle @"idle"
+#define HBClientActionPing @"ping"
+#define HBClientActionHeartbeat @"heartbeat"
+
+#define HBClientFeatureReceipts @"receipts"
+
+#define HBErrorIncompleteRequest @"Incomplete Request"
+#define HBErrorUnrecognizedAction @"Unrecognized Action"
+#define HBErrorInvalidHash @"Invalid Hash/Timestamp Combo (Check System Clock)"
+#define HBErrorRegistrationDenied @"Registration Denied"
+#define HBErrorUnrecognizedClient @"Unrecognized Client Identifier"
+
 @interface HBResponder : NSObject<BBResponder> {
 	NSMutableArray *openRequestIDs;
 	NSMutableDictionary *requests;
 	id delegate;
+	
+	NSMutableDictionary *clientStates;
+	NSMutableDictionary *clientSessionKeys;
+	NSMutableDictionary *clientFeatures;
+	NSMutableDictionary *clientPollRequests;
+	NSMutableDictionary *clientPendingPushes;
+	NSMutableDictionary *clientPendingReceipts;
 }
 
 // Properties
 @property(assign) id delegate;
 
-// Push methods
+// High-level client methods
+- (NSString *)pushString:(NSString *)theString toClient:(NSString *)theIdentifier;
+- (NSString *)pushString:(NSString *)theString contentType:(NSString *)type toClient:(NSString *)theIdentifier;
+- (NSString *)pushPropertyList:(id)thePlist toClient:(NSString *)theIdentifier;
+- (NSString *)pushData:(NSData *)theData contentType:(NSString *)type headers:(NSDictionary *)headers toClient:(NSString *)theIdentifier;
+- (BOOL)pushWithIdentifier:(NSString *)pushID hasCompletedForClient:(NSString *)theIdentifier;
+
+// Low-level push methods
 - (void)pushResponseString:(NSString *)theString toRequestWithIdentifier:(NSString *)theIdentifier;
 - (void)pushResponseString:(NSString *)theString toRequestWithIdentifier:(NSString *)theIdentifier contentType:(NSString *)type;
-- (void)pushResponse:(NSData *)theData toRequestWithIdentifier:(NSString *)theIdentifier contentType:(NSString *)type statusCode:(NSInteger)status;
-
-// Request fulfillment handlers
-- (void)removeRequestWithIdentifier:(NSString *)theIdentifier;
-- (void)connectionDied:(NSNotification *)theNotification;
-
-// Responder methods (BBResponder)
-- (void)handleRequest:(BBRequest *)theRequest;
-- (BOOL)repliesAsynchronously;
+- (void)pushResponse:(NSData *)theData toRequestWithIdentifier:(NSString *)theIdentifier contentType:(NSString *)type headers:(NSDictionary *)headers statusCode:(NSInteger)status;
 
 @end
