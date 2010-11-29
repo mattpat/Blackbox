@@ -28,27 +28,6 @@
 #import "BBResponder.h"
 
 
-// Constants
-#define HBDefaultHashTimestampThreshold 900
-
-#define HBClientStateActive @"active"
-#define HBClientStateIdle @"idle"
-
-#define HBClientActionRegister @"register"
-#define HBClientActionUnregister @"unregister"
-#define HBClientActionPoll @"poll"
-#define HBClientActionIdle @"idle"
-#define HBClientActionPing @"ping"
-#define HBClientActionHeartbeat @"heartbeat"
-
-#define HBClientFeatureReceipts @"receipts"
-
-#define HBErrorIncompleteRequest @"Incomplete Request"
-#define HBErrorUnrecognizedAction @"Unrecognized Action"
-#define HBErrorInvalidHash @"Invalid Hash/Timestamp Combo (Check System Clock)"
-#define HBErrorRegistrationDenied @"Registration Denied"
-#define HBErrorUnrecognizedClient @"Unrecognized Client Identifier"
-
 @interface HBResponder : NSObject<BBResponder> {
 	NSMutableArray *openRequestIDs;
 	NSMutableDictionary *requests;
